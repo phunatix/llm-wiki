@@ -30,11 +30,15 @@ Platform engineering is the practice of designing, delivering, and evolving inte
 - [Platform Engineering Maturity Model](platform-engineering-maturity-model.md)
 - [Agentic Infrastructure](agentic-infrastructure.md)
 - [Governance By Default](governance-by-default.md)
+- [Internal Developer Platforms](internal-developer-platforms.md)
+- [Developer Self-Service](developer-self-service.md)
 
 # Evidence
 
 - Defined and discussed in [Platform Engineering Maturity Model](../sources/platform-engineering-maturity-model.md).
 - Future-state themes appear in [10 Platform engineering predictions for 2026](../sources/10-platform-engineering-predictions-2026.md).
+- Adoption and purpose-oriented platform guidance appears in [What’s the Future of Platform Engineering?](../sources/whats-the-future-of-platform-engineering.md).
+- Self-service design tradeoffs appear in [Dark Side of Self-Service](../sources/dark-side-of-self-service.md).
 
 # Open Questions
 

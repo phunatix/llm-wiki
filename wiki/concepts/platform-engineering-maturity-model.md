@@ -5,7 +5,7 @@ status: active
 created: 2026-04-10
 updated: 2026-04-10
 source_files:
-  - raw/inbox/Platform Engineering Maturity Model.md
+  - raw/sources/Platform Engineering Maturity Model.md
 tags:
   - concept
   - maturity-model

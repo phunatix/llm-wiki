@@ -21,3 +21,10 @@ Append-only record of significant wiki operations.
 - Expanded the platform engineering concept with themes around agentic infrastructure, AI safety nets, unified delivery pipelines, FinOps guardrails, governance-by-default, and role specialization.
 - Added dedicated concept pages for agentic infrastructure and governance-by-default.
 - Moved processed source files from `raw/inbox/` to `raw/sources/` and updated wiki page frontmatter to reference the canonical raw source paths.
+
+## [2026-04-10] ingest | Process remaining inbox batch
+
+- Ingested the remaining inbox documents across platform engineering, Kubernetes operations, SRE, AI agents, MCP tooling, and organizational design.
+- Added reusable concept pages for Kubernetes, internal developer platforms, developer self-service, SRE, AI-assisted software development, and MCP.
+- Updated the overview and index to reflect the broader scope of the current source set.
+- Prepared the newly ingested raw files for archival under `raw/sources/`.
