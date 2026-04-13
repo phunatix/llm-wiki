@@ -1,54 +1,120 @@
-# Index
+# Wiki Index
 
-This file is the primary catalog for the wiki. Update it whenever new pages are created or major pages change scope.
+**Updated**: 2026-04-13 | **Total Pages**: 57 | **Total Sources**: 18
 
-## Meta
+This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
-- [Overview](meta/overview.md): current scope, operating assumptions, and what this wiki is for.
+---
 
-## Sources
+## Topics (6)
 
-- [10 Platform engineering predictions for 2026](sources/10-platform-engineering-predictions-2026.md): forward-looking article on AI agents, FinOps, governance-by-default, role specialization, and other platform engineering shifts expected by 2026.
-- [Agentic AI auf Azure](sources/agentic-ai-auf-azure.md): overview of Azure AI Agent Service and the components needed to build enterprise-oriented AI agents.
-- [An Introduction to Kustomize](sources/introduction-to-kustomize.md): practical introduction to template-free Kubernetes manifest customization with bases and overlays.
-- [Building Multi-Tenant Kubernetes on Azure AKS](sources/building-multi-tenant-kubernetes-on-azure-aks.md): design-oriented guide to shared-cluster tenancy on AKS using namespaces, quotas, RBAC, and network policies.
-- [Dark Side of Self-Service](sources/dark-side-of-self-service.md): argument that self-service fails when it becomes either unmanaged burden-shifting or overly restrictive abstraction.
-- [Developers, Reinvented](sources/developers-reinvented.md): essay on how AI-heavy workflows shift developer work toward delegation, verification, and system-level thinking.
-- [How Apple Is Organized for Innovation](sources/how-apple-is-organized-for-innovation.md): analysis of Apple’s functional organizational model and the principle of experts leading experts.
-- [How to SRE Anything](sources/how-to-sre-anything.md): generalization of SRE principles into a framework for designing reliable systems in many domains.
-- [How to Stay Open and Curious in Hard Conversations](sources/how-to-stay-open-and-curious-in-hard-conversations.md): communication-focused essay on humility, truth-seeking, and curiosity in difficult discussions.
-- [How to Write a Good README File for Your GitHub Project](sources/how-to-write-a-good-readme-file.md): README best-practices guide focused on project framing, setup, usage, contribution, and maintenance.
-- [Kubernetes Logging in Production](sources/kubernetes-logging-in-production.md): comparison of DaemonSet and sidecar logging patterns for production Kubernetes clusters.
-- [Linux Foundation, Google, Anthropic: Wer den Standard für KI-Agenten setzt](sources/linux-foundation-google-anthropic-wer-den-standard-fuer-ki-agenten-setzt.md): overview of emerging agent protocol layers such as MCP, A2A, UCP, and AP2 with a strong governance emphasis.
-- [Managing MCP Servers and Tools With Agentregistry OSS](sources/managing-mcp-servers-and-tools-with-agentregistry-oss.md): practical note on registries, provenance, and version control for MCP servers and tools.
-- [Nomad, Kubernetes, and a Pragmatic Look at Choosing Orchestrators](sources/nomad-kubernetes-and-a-pragmatic-look-at-choosing-orchestrators.md): argument for choosing orchestrators by fit, including multi-orchestrator environments.
-- [Platform Engineering Maturity Model](sources/platform-engineering-maturity-model.md): summary of the CNCF maturity model for platform engineering, including its core aspects and intended use.
-- [Run Kubernetes in Azure the Cheap Way](sources/run-kubernetes-in-azure-the-cheap-way.md): low-cost AKS pattern for learning and experimentation rather than production use.
-- [Run the Istio ingress gateway with TLS termination and TLS passthrough](sources/run-the-istio-ingress-gateway-with-tls-termination-and-tls-passthrough.md): configuration-oriented note on serving both TLS modes from one Istio ingress gateway.
-- [Security Operations mit n8n automatisieren](sources/security-operations-mit-n8n-automatisieren.md): tutorial on automating threat enrichment and Wazuh alert handling with n8n and LLM-backed analysis.
-- [Site Reliability Engineers: We solve cooler problems](sources/site-reliability-engineers-we-solve-cooler-problems.md): interview framing SRE as production-wide engineering focused on efficiency, automation, and scale.
-- [Talos: Ein Minimal-Linux für Kubernetes](sources/talos-ein-minimal-linux-fuer-kubernetes.md): introduction to Talos as an immutable Kubernetes-focused OS with API-driven management instead of SSH and package managers.
-- [The rise and future of Kubernetes and open source at Google](sources/the-rise-and-future-of-kubernetes-and-open-source-at-google.md): Google perspective on open source, software supply chain security, and Kubernetes across edge and hybrid environments.
-- [What If the US Cuts Off Tech to Europe?](sources/what-if-the-us-cuts-off-tech-to-europe.md): speculative essay about Europe’s dependence on US cloud and AI infrastructure.
-- [What’s the Future of Platform Engineering?](sources/whats-the-future-of-platform-engineering.md): interview-driven article arguing that platform engineering success is primarily cultural and must stay tied to purpose.
+- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load | Sources: 3
+- [[topics/ai-software-development]] — AI coding agents, developer transformation, local LLMs, Europe AI dependency | Sources: 4
+- [[topics/personal-knowledge-management]] — Obsidian, LLM Wiki pattern, plain-text-first, read-it-later | Sources: 3
+- [[topics/leadership-management]] — Functional organization, experts leading experts, difficult employees, conversations | Sources: 4
+- [[topics/devops-homelab]] — Kubernetes/K3s, Proxmox, InfluxDB/Grafana, SRE principles | Sources: 3
+- [[topics/running-marathon]] — Marathon interval training, seasonal planning, six race tempos | Sources: 2
 
-## Entities
+---
 
-- [CNCF](entities/cncf.md): Cloud Native Computing Foundation as a publisher and steward of platform engineering guidance referenced in this wiki.
+## Entities (8)
 
-## Concepts
+- [[entities/Apple]] — Company; functional org structure; experts leading experts; 40x revenue growth on same structure | Sources: 1
+- [[entities/Eric-J-Ma]] — Data scientist; Obsidian + AI PKM system; 12 people managed; 30-40% → <10% PKM overhead | Sources: 1
+- [[entities/Humanitec]] — Platform engineering company; coined "IDP"; Platform Orchestrator, Score | Sources: 2
+- [[entities/Kaspar-von-Grunberg]] — CEO Humanitec; coined "Internal Developer Platform"; cognitive load model | Sources: 1
+- [[entities/LM-Studio]] — Local LLM serving GUI; enables self-hosted AI coding; OpenAI-compatible API | Sources: 1
+- [[entities/Obsidian]] — Plain-text PKM tool; graph view; wikilinks; ideal for AI-augmented workflows | Sources: 3
+- [[entities/Proxmox]] — Open-source hypervisor; homelab base layer; built-in InfluxDB metric server | Sources: 2
+- [[entities/Thomas-Dohmke]] — GitHub CEO; "Developers, Reinvented"; four-stage AI adoption model | Sources: 1
 
-- [AI-Assisted Software Development](concepts/ai-assisted-software-development.md): shift in developer work toward prompting, delegation, verification, and agent coordination.
-- [Developer Self-Service](concepts/developer-self-service.md): platform pattern that succeeds when it reduces cognitive load without trapping teams in rigid abstractions.
-- [Internal Developer Platforms](concepts/internal-developer-platforms.md): product-like internal platforms that provide golden paths, self-service, and governed workflows for developers.
-- [Kubernetes](concepts/kubernetes.md): container orchestration platform and recurring substrate for many sources in this wiki.
-- [Model Context Protocol](concepts/model-context-protocol.md): emerging interoperability layer for agents to discover and use external tools and resources.
-- [Platform Engineering](concepts/platform-engineering.md): practice of building and operating internal platforms for product and application teams.
-- [Platform Engineering Maturity Model](concepts/platform-engineering-maturity-model.md): a staged framework for assessing platform engineering evolution across multiple aspects.
-- [Agentic Infrastructure](concepts/agentic-infrastructure.md): use of AI agents as first-class platform actors governed like other platform users.
-- [Governance By Default](concepts/governance-by-default.md): embedding compliance and security controls directly into platform defaults and delivery paths.
-- [Site Reliability Engineering](concepts/site-reliability-engineering.md): engineering discipline focused on reliability, automation, toil reduction, and production system effectiveness.
+---
 
-## Analyses
+## Concepts (16)
 
-- No analysis pages yet.
+- [[concepts/ai-developer-stages]] — Four-stage progression: AI Skeptic → Explorer → Collaborator → Strategist | Sources: 1
+- [[concepts/agentic-coding-risks]] — Compounding errors, low recall, merchants of complexity; the case for discipline | Sources: 1
+- [[concepts/cognitive-load]] — Mental effort of operating systems; key metric for platform/self-service design | Sources: 2
+- [[concepts/developer-self-service]] — "You build it, you run it" at scale; division of labor reality; research data | Sources: 2
+- [[concepts/discretionary-leadership]] — Apple's scale model: own / teach / learn / delegate | Sources: 1
+- [[concepts/europe-ai-dependency]] — 70% cloud + 85% GPU US-controlled; structural EU vulnerability | Sources: 1
+- [[concepts/experts-leading-experts]] — Apple's management principle: domain experts lead their specialties | Sources: 1
+- [[concepts/forward-deployed-engineer]] — Engineer embedded with users to bridge platform and real-world needs | Sources: 1
+- [[concepts/functional-organization]] — Single-P&L, function-based structure; decision rights follow expertise | Sources: 1
+- [[concepts/golden-paths]] — Opinionated defaults that abstract complexity without restricting freedom; 97% adoption | Sources: 2
+- [[concepts/hard-conversations]] — Eight techniques for staying curious and humble in difficult discussions | Sources: 1
+- [[concepts/internal-developer-platform]] — Self-service layer for developer infrastructure; IDP | Sources: 2
+- [[concepts/llm-wiki-pattern]] — Karpathy's pattern: LLM incrementally builds and maintains a persistent wiki | Sources: 2
+- [[concepts/marathon-interval-training]] — Backwards-planned intervals: 10RT → HMRT → MRT across training block | Sources: 2
+- [[concepts/plain-text-first]] — Choosing Markdown for future-proofing; proved ideal for AI-augmented workflows | Sources: 2
+- [[concepts/sre-anything-framework]] — SRE reliability hierarchy generalized to any domain | Sources: 1
+
+---
+
+## Summaries (18)
+
+- [[summaries/dark-side-of-self-service--summary]] — Humanitec; developer self-service anti-patterns; cognitive load model
+- [[summaries/developers-reinvented--summary]] — GitHub CEO; four-stage AI adoption; delegation + verification as new dev role
+- [[summaries/forward-deployed-engineer--summary]] — FDE role; AI FDE; embedding platform engineers in app teams
+- [[summaries/how-apple-is-organized--summary]] — HBR; Apple's functional org; experts leading experts; discretionary leadership
+- [[summaries/it-salary-germany--summary]] — Robert Half 2026 data; AI roles not yet premium; architects highest non-C-suite
+- [[summaries/k3s-metallb-proxmox--summary]] — K3s cluster on Proxmox VMs; MetalLB Layer 2; step-by-step guide
+- [[summaries/karpathy-llmwiki-pattern--summary]] — The LLM Wiki pattern this vault implements
+- [[summaries/laufsaison-planung--summary]] — Autumn marathon seasonal plan; four phases; max 2 goals per year
+- [[summaries/managing-difficult-employees--summary]] — HBR; three tactics for oppositional employees; fear as root cause
+- [[summaries/marathon-interval-training--summary]] — Laufcampus; six tempos; backwards planning; race week HMRT session
+- [[summaries/mastering-pkm-obsidian-ai--summary]] — Eric J. Ma; Obsidian + AI agents; 12 people managed; PKM at scale
+- [[summaries/obsidian-read-it-later--summary]] — ReadItLater plugin; Obsidian as Pocket replacement; plain text workflow
+- [[summaries/proxmox-influxdb-grafana--summary]] — Proxmox metric server → InfluxDB → Grafana; InfluxQL preferred over Flux
+- [[summaries/readme-file-guide--summary]] — freeCodeCamp; README sections; what/why/how structure
+- [[summaries/self-hosted-ai-coding--summary]] — r/LocalLLaMA; LM Studio + Qwen3-Coder + Roo Code setup guide
+- [[summaries/sre-anything--summary]] — Jennifer Petoff; SRE hierarchy generalized; family emergency example
+- [[summaries/staying-open-in-hard-conversations--summary]] — Berkeley; eight techniques for curiosity and humility in hard conversations
+- [[summaries/thoughts-on-slowing-down--summary]] — Mario Zechner; agentic coding risks; compounding errors; slow down
+- [[summaries/us-cuts-off-tech-to-europe--summary]] — Europe's AI/cloud dependency; 70% US cloud; no competitive EU AI stack
+- [[summaries/whats-the-future-of-platform-engineering--summary]] — Humanitec/DORA; PE is 90% cultural; AI intersection; Gartner 80% by 2026
+
+---
+
+## Analyses (1)
+
+- [[analyses/ai-coding-perspectives-comparison]] — Dohmke (optimism) vs. Zechner (caution) on AI coding agents; synthesis
+
+---
+
+## Sources Ingested (18)
+
+All from `raw/inbox/`. Ingested 2026-04-13.
+
+1. Dark Side of Self-Service – Humanitec (2021)
+2. Developers, Reinvented – Thomas Dohmke (2025)
+3. Gehaltsreport IT-Profis und KI-Spezialisten (2026)
+4. Guide: Self-Hosted AI Coding with Qwen3-Coder (2025)
+5. How Apple Is Organized for Innovation (2020)
+6. How to Manage a Stubborn, Defensive, or Defiant Employee (2019)
+7. How to SRE Anything (2025)
+8. How to Stay Open and Curious in Hard Conversations (2022)
+9. How to Write a Good README File (2021)
+10. How to Setup a Kubernetes Cluster with K3S and MetalLB on Proxmox (2024)
+11. Integrating Proxmox VE with InfluxDB and Grafana (2024)
+12. Mastering Personal Knowledge Management with Obsidian and AI (2026)
+13. Marathon Interval Training Guide (2023)
+14. Obsidian, My New Read-It-Later App (2024)
+15. Laufsaison Planung (n.d.)
+16. Thoughts on Slowing the F*ck Down (2026)
+17. What If the US Cuts Off Tech to Europe (2026)
+18. What's the Future of Platform Engineering? (2025)
+19. Why the Forward-Deployed Engineer Is Tech's Hottest Job (2026)
+
+---
+
+## Navigation Tips
+
+- **Graph View** (Cmd+Shift+G): See the shape of your wiki
+- **Backlinks** (Ctrl+Alt+L): Find pages linking to the current page
+- **Search** (Ctrl+Shift+F): Find pages by content
+- **Quick Open** (Cmd+P): Jump to any page by name
+
+## Recent Changes
+
+- **2026-04-13**: Full batch ingest of 18 sources from `raw/inbox/` — 57 pages created

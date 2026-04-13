@@ -1,30 +1,74 @@
-# Log
+# Wiki Evolution Log
 
-Append-only record of significant wiki operations.
+**Purpose**: Append-only chronological record of all wiki activity.
 
-## [2026-04-10] bootstrap | Initialize repository structure
+Format: `## [YYYY-MM-DD] operation | description`
 
-- Created raw source, wiki, and template directories.
-- Added `AGENTS.md` with ingest, query, and lint workflows.
-- Added starter files: `README.md`, `wiki/index.md`, `wiki/log.md`, and `wiki/meta/overview.md`.
+This helps the LLM understand what's been done recently and is parseable with simple tools.
+For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 
-## [2026-04-10] ingest | Platform engineering inbox files
+---
 
-- Ingested `raw/inbox/Platform Engineering Maturity Model.md` into a source page and extracted core concepts around platform engineering maturity.
-- Ingested `raw/inbox/10 Platform engineering predictions for 2026.md` as a partial source capture because the inbox file only contained frontmatter and a stub body.
-- Added concept pages for platform engineering and the platform engineering maturity model, plus an entity page for CNCF.
-- Updated the overview and index to reflect the wiki's current domain focus.
+## [2026-04-13] init | Wiki structure created
 
-## [2026-04-10] ingest | Re-ingest updated predictions article and archive sources
+- Created directory structure: `raw/`, `wiki/`, `templates/`
+- Initialized CLAUDE.md schema
+- Created index.md and log.md
+- Ready for first source ingest
 
-- Re-ingested `10 Platform engineering predictions for 2026.md` after the inbox clipping was updated with the full article body.
-- Expanded the platform engineering concept with themes around agentic infrastructure, AI safety nets, unified delivery pipelines, FinOps guardrails, governance-by-default, and role specialization.
-- Added dedicated concept pages for agentic infrastructure and governance-by-default.
-- Moved processed source files from `raw/inbox/` to `raw/sources/` and updated wiki page frontmatter to reference the canonical raw source paths.
 
-## [2026-04-10] ingest | Process remaining inbox batch
+---
 
-- Ingested the remaining inbox documents across platform engineering, Kubernetes operations, SRE, AI agents, MCP tooling, and organizational design.
-- Added reusable concept pages for Kubernetes, internal developer platforms, developer self-service, SRE, AI-assisted software development, and MCP.
-- Updated the overview and index to reflect the broader scope of the current source set.
-- Prepared the newly ingested raw files for archival under `raw/sources/`.
+## [2026-04-13] ingest | Batch ingest of 18 sources from raw/inbox/
+
+**Sources processed**: 18 articles/guides from `raw/inbox/`
+
+**Domains covered**:
+- Platform Engineering (3 sources)
+- AI & Software Development (4 sources)
+- Personal Knowledge Management (3 sources)
+- Leadership & Management (4 sources)
+- DevOps & Homelab (3 sources + Karpathy pattern)
+- Running & Marathon (2 sources)
+
+**Pages created**:
+
+*Topics* (6 new):
+- `wiki/topics/platform-engineering`
+- `wiki/topics/ai-software-development`
+- `wiki/topics/personal-knowledge-management`
+- `wiki/topics/leadership-management`
+- `wiki/topics/devops-homelab`
+- `wiki/topics/running-marathon`
+
+*Entities* (8 new):
+- `wiki/entities/Apple`
+- `wiki/entities/Eric-J-Ma`
+- `wiki/entities/Humanitec`
+- `wiki/entities/Kaspar-von-Grunberg`
+- `wiki/entities/LM-Studio`
+- `wiki/entities/Obsidian`
+- `wiki/entities/Proxmox`
+- `wiki/entities/Thomas-Dohmke`
+
+*Concepts* (16 new):
+- ai-developer-stages, agentic-coding-risks, cognitive-load
+- developer-self-service, discretionary-leadership, europe-ai-dependency
+- experts-leading-experts, forward-deployed-engineer, functional-organization
+- golden-paths, hard-conversations, internal-developer-platform
+- llm-wiki-pattern, marathon-interval-training, plain-text-first
+- sre-anything-framework
+
+*Summaries* (18 new): One per source
+
+*Analyses* (1 new):
+- `wiki/analyses/ai-coding-perspectives-comparison` (Dohmke vs. Zechner synthesis)
+
+**Key insights from this batch**:
+- Platform engineering is "10% technical, 90% cultural change" — alignment across all three PE sources
+- AI coding agent adoption: deep tension between Dohmke's optimism and Zechner's caution; both credible
+- Obsidian + plain text + AI agents = mutually reinforcing choices; Eric J. Ma's system validates this
+- Europe's structural AI dependency is a significant geopolitical risk, largely unaddressed
+- Apple's functional org (experts leading experts) remains the most counterintuitive and durable org model documented
+
+**Total wiki size after ingest**: 57 pages
