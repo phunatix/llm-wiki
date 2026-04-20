@@ -1,9 +1,9 @@
 ---
 title: Personal Knowledge Management (PKM)
 type: topic
-source_count: 3
+source_count: 6
 created: 2026-04-13
-last_updated: 2026-04-13
+last_updated: 2026-04-17
 tags: [pkm, obsidian, knowledge-management, note-taking, ai]
 inbound_links: 0
 status: complete
@@ -28,6 +28,9 @@ related_pages: ["[[entities/Obsidian]]", "[[concepts/plain-text-first]]", "[[con
 
 - [[concepts/plain-text-first]]: Choosing plain text/Markdown for future-proofing and AI compatibility
 - [[concepts/llm-wiki-pattern]]: Karpathy's pattern for LLM-maintained persistent wikis
+- [[concepts/para-method]]: PARA (Projects/Areas/Resources/Archive); Tiago Forte; optimizes for discoverability
+- [[concepts/johnny-decimal]]: JD system; numeric addressing; optimizes for searchability
+- [[concepts/ai-memory-architecture]]: When to use markdown vs. databases for AI agent knowledge; the key architectural debate
 - [[concepts/agent-skills]]: Encoded procedural knowledge that an AI coding agent executes
 
 ## Key Entities
@@ -64,6 +67,7 @@ Knowledge Compounding: LOW  ─────────────────�
 - **Privacy vs. cloud**: Local-first (Obsidian) vs. cloud-based tools (Notion, Confluence)
 - **Structure vs. emergence**: How much template/schema to impose vs. letting connections emerge organically
 - **Agent autonomy**: How much to verify agent-written notes vs. trusting and sweeping periodically
+- **Markdown vs. databases for AI memory**: Jonathan Edwards argues markdown files fail as agent memory (no querying, no schema, scale ceiling); proponents counter that knowledge wikis and agent memory are different use cases. See [[concepts/ai-memory-architecture]].
 
 ## See Also
 
@@ -75,3 +79,6 @@ Knowledge Compounding: LOW  ─────────────────�
 - [[summaries/mastering-pkm-obsidian-ai--summary]]: Most detailed account of production PKM system with AI
 - [[summaries/obsidian-read-it-later--summary]]: Lightweight workflow for using Obsidian as read-it-later app
 - [[summaries/karpathy-llmwiki-pattern--summary]]: The foundational LLM Wiki pattern this vault implements
+- [[summaries/two-pkm-approaches-summary]]: Crystal Lee; PARA vs. Johnny.Decimal; searchability vs. discoverability
+- [[summaries/stop-calling-it-memory-summary]]: Jonathan Edwards; the case against markdown-as-AI-memory; SQLite + graph DB alternative
+- [[summaries/mindstudio-ai-second-brain-summary]]: MindStudio; practical Claude Code + Obsidian workflow guide (daily notes, meeting notes, weekly review)

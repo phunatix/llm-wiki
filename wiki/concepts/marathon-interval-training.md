@@ -18,14 +18,14 @@ related_pages: ["[[topics/running-marathon]]"]
 
 ## The Laufcampus Six Race Tempos
 
-| Abbreviation | Distance | Interval Lengths | Max Volume |
-|---|---|---|---|
-| 1RT | 1K race pace | Short bursts | - |
-| 3RT | 3K race pace | Short | - |
-| 5RT | 5K race pace | Medium | - |
-| 10RT | 10K race pace | 1,000–2,000m | 10,000m total |
-| HMRT | Half-marathon pace | 1,600–3,000m | 14,000m total |
-| MRT | Marathon pace | 3,000–6,000m | 24,000m total |
+| Abbreviation | Distance           | Interval Lengths | Max Volume    |
+| ------------ | ------------------ | ---------------- | ------------- |
+| 1RT          | 1K race pace       | Short bursts     | -             |
+| 3RT          | 3K race pace       | Short            | -             |
+| 5RT          | 5K race pace       | Medium           | -             |
+| 10RT         | 10K race pace      | 1,000–2,000m     | 10,000m total |
+| HMRT         | Half-marathon pace | 1,600–3,000m     | 14,000m total |
+| MRT          | Marathon pace      | 3,000–6,000m     | 24,000m total |
 
 ## The Backwards Planning Principle
 
