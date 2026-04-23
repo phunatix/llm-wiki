@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/How I\"$'\\\\xe2\\\\x80\\\\x99'\"m Productive with Claude Code.md\")",
+      "Bash(cd \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/\" && cat \"How I\"$'\\\\xe2\\\\x80\\\\x99'\"m Productive with Claude Code.md\" 2>/dev/null || python3 -c \"\nimport os\nfor f in os.listdir\\('.'\\):\n    if 'Productive' in f:\n        with open\\(f, 'r', encoding='utf-8'\\) as fh:\n            print\\(fh.read\\(\\)\\)\n\")",
+      "Bash(python3 -c \"import shutil; shutil.copy\\('/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/How I\\\\u2019m Productive with Claude Code.md', '/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/kakkar-productive-claude-code.md'\\)\")",
+      "Bash(cp \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/What are golden paths? A guide to streamlining developer workflows.md\" \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/golden-paths-guide.md\" && cp \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/How We Use Golden Paths to Solve Fragmentation in Our Software Ecosystem.md\" \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/spotify-golden-paths.md\" && cp \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/How to pave golden paths that actually go somewhere.md\" \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/golden-paths-day-50.md\" && cp \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/Golden Paths One Size Does Not Fit All.md\" \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/golden-paths-one-size.md\" && cp \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/Building a golden path to AI.md\" \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/golden-path-to-ai.md\" && echo \"All 5 files copied\" && ls /Users/olaf/Documents/Obsidian/llm-wiki/raw/articles/ | grep golden)"
+    ]
+  }
+}

@@ -180,3 +180,66 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 - OVHcloud faces a real legal paradox: Canada ordered it to provide access to data stored in France — compliance violates French law, non-compliance risks contempt charges
 
 **Total wiki size after ingest**: 75 pages / 25 sources
+
+---
+
+## [2026-04-23] ingest | Frugal Architecture (AWS) + Heinzel AI Sysadmin + Kakkar Claude Code Productivity
+
+**Sources processed** (3):
+1. "Achieving Frugal Architecture using the AWS Well-Architected Framework guidance" — Ashley DeLoach & Patrick Yurista, AWS Architecture Blog, 2024-08-14
+2. "KI-Assistent Heinzel für die Server-Administration im Überblick" — Stefan Wintermeyer, heise.de/iX, 2026-04-15
+3. "How I'm Productive with Claude Code" — Neil Kakkar, 2026-03-16
+
+**Pages created** (6):
+- `wiki/concepts/frugal-architecture` — Werner Vogels' 7 laws; cost as NFR; frugality = value maximization; Well-Architected Framework mapping table
+- `wiki/entities/Heinzel` — AI sysadmin ruleset; architecture diagram; anti-hallucination design; safety prohibitions; three-tier override system; team usage
+- `wiki/concepts/agentic-development-loop` — Four friction-removal steps; Theory of Constraints framing; implementer → agent manager identity shift; 5 parallel worktrees
+- `wiki/summaries/frugal-architecture-summary` — Key reframe (frugality ≠ cheapness); law-by-law takeaways; connections to cloud-sovereignty and sre-anything-framework
+- `wiki/summaries/heinzel-sysadmin-summary` — Architecture, anti-hallucination design, hard safety lines; tool agnosticism; team git workflow
+- `wiki/summaries/productive-with-claude-code-summary` — Neil Kakkar's 6 weeks at Tano; Theory of Constraints; threshold effect of build speed; infrastructure over features
+
+**Pages updated** (4):
+- `wiki/topics/devops-homelab` — added frugal-architecture concept, Heinzel entity, new summaries; source count 3→5
+- `wiki/topics/ai-software-development` — added agentic-development-loop concept, Kakkar summary, March 2026 development entry; source count 4→5
+- `wiki/index.md` — 81 pages / 28 sources; added all 6 new pages + new source entries + 1 entity + 2 concepts
+- `wiki/log.md` — this entry
+
+**Key insights**:
+- Frugal Architecture reframes cost as a *design input* rather than a constraint discovered post-launch; Law 3's security carve-out ("security is never a viable trade-off") is the most practically useful single sentence in the piece
+- Heinzel demonstrates that a ruleset-as-system-prompt can enforce safety properties (hard prohibitions, dry-run-first, prompt injection awareness) that would be ignored or forgotten in ad-hoc AI sysadmin work; also shows CLAUDE.md has become a de facto standard project instruction format beyond Anthropic tools
+- Kakkar's Theory of Constraints framing is the most useful conceptual lens for the agentic development transition: each friction you remove makes the next constraint visible; the compound effect eventually shifts the developer's highest-leverage work from writing features to building agent infrastructure
+- Three sources from this batch naturally form a cluster: Frugal Architecture (cost discipline), Heinzel (AI-in-infrastructure with guardrails), and Kakkar (agentic workflow loops) all address the "how do you operate responsibly at increasing automation levels" question from different angles
+
+**Total wiki size after ingest**: 81 pages / 28 sources
+
+---
+
+## [2026-04-23] ingest | Five Golden Paths articles — major expansion of concepts/golden-paths
+
+**Sources processed** (5):
+1. "What are golden paths? A guide to streamlining developer workflows" — Mallory Haigh, platformengineering.org, 2025-01-29
+2. "How We Use Golden Paths to Solve Fragmentation in Our Software Ecosystem" — Gary Niemen, Spotify Engineering Blog, ~2020
+3. "How to pave golden paths that actually go somewhere" — Aeris Ransom, platformengineering.org, 2023-12-13
+4. "Golden Paths: One Size Does Not Fit All" — Bryan Ross, chieftherapyofficer.co.uk, 2025-11-22
+5. "Building a golden path to AI" — Matt Asay, InfoWorld, 2025-10-26
+
+**Pages created** (5):
+- `wiki/summaries/golden-paths-what-are-they-summary` — Five reasons, vending machine model, value stream mapping design process (Haigh)
+- `wiki/summaries/spotify-golden-paths-summary` — Origin story (Dune), rumour-driven development, six success factors, Golden State concept (Niemen)
+- `wiki/summaries/golden-paths-day-50-summary` — Day 1 vs Day 2–50; frequency×time prioritization table; DCM as root-cause fix (Ransom/von Grünberg)
+- `wiki/summaries/golden-paths-one-size-summary` — Guardrails over gates; 17%→86% adoption case study; composable building blocks (Ross)
+- `wiki/summaries/golden-path-to-ai-summary` — AI velocity gap; composable AI guardrails; OpenAI-compatible API standard; data governance layer (Asay)
+
+**Pages updated** (3):
+- `wiki/concepts/golden-paths` — Major rewrite: 2 sources → 7 sources; added origin/Spotify, definitions table, Day 1 vs Day 2–50, guardrails over gates, components over completeness, exception handling, DCM, AI golden paths, Golden State, Spotify success factors, prioritization framework
+- `wiki/topics/platform-engineering` — Added guardrails/Day 2-50 to key debates; three new key insights; 5 new summaries to sources section; source_count 3→8
+- `wiki/index.md` — 86 pages / 33 sources; concept entry updated; 5 new summaries added; 5 new source entries
+
+**Key insights**:
+- Golden paths originated at Spotify ~2014 as a Hack Week project named after Dune's "Golden Path" — the term was coined there, not at Humanitec or elsewhere
+- The Day 1 vs Day 2–50 insight (von Grünberg) is the most important strategic reframe in this batch: scaffolding is <1% of application lifetime; all the real friction is in ongoing operations. Most platform teams have their priorities exactly backwards.
+- Bryan Ross's 17%→86% adoption case study is the most concrete evidence in the wiki for the "standardization through attraction" principle — achieved by reducing mandatory requirements to exactly three non-negotiables and making everything else flexible
+- The AI velocity gap (Asay) is the golden paths concept applied to a moving target: monolithic standardization fails precisely because AI models and capabilities evolve faster than committees can approve. The solution (composable APIs + guardrails + exits with obligations) is structurally identical to what Ross recommends for platform engineering generally
+- All five sources form a coherent argument: Haigh (what/why) → Spotify (origin/culture) → Ransom/von Grünberg (Day 2-50 prioritization) → Ross (guardrails vs gates) → Asay (AI extension). Reading them in order is a complete education on the topic.
+
+**Total wiki size after ingest**: 86 pages / 33 sources

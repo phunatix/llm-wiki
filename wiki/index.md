@@ -1,6 +1,6 @@
 # Wiki Index
 
-**Updated**: 2026-04-17 | **Total Pages**: 75 | **Total Sources**: 25
+**Updated**: 2026-04-23 | **Total Pages**: 86 | **Total Sources**: 33
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
@@ -8,21 +8,22 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ## Topics (7)
 
-- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load | Sources: 3
-- [[topics/ai-software-development]] — AI coding agents, developer transformation, local LLMs, Europe AI dependency | Sources: 4
+- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load, Day 2–50 prioritization, AI velocity gap | Sources: 8
+- [[topics/ai-software-development]] — AI coding agents, developer transformation, local LLMs, Europe AI dependency, agentic workflow loops | Sources: 5
 - [[topics/personal-knowledge-management]] — Obsidian, LLM Wiki pattern, PARA, Johnny.Decimal, markdown vs. databases debate | Sources: 6
 - [[topics/leadership-management]] — Functional organization, experts leading experts, difficult employees, conversations | Sources: 4
-- [[topics/devops-homelab]] — Kubernetes/K3s, Proxmox, InfluxDB/Grafana, SRE principles | Sources: 3
+- [[topics/devops-homelab]] — Kubernetes/K3s, Proxmox, InfluxDB/Grafana, SRE principles, Frugal Architecture, AI sysadmin | Sources: 5
 - [[topics/electric-vehicles]] — Tesla Inc., Model Y, Giga Berlin; EV industry, manufacturing innovation, Musk dynamic | Sources: 3
 - [[topics/running-marathon]] — Marathon interval training, seasonal planning, six race tempos | Sources: 2
 
 ---
 
-## Entities (11)
+## Entities (12)
 
 - [[entities/Apple]] — Company; functional org structure; experts leading experts; 40x revenue growth on same structure | Sources: 1
 - [[entities/Eric-J-Ma]] — Data scientist; Obsidian + AI PKM system; 12 people managed; 30-40% → <10% PKM overhead | Sources: 1
 - [[entities/Gigafactory-Berlin-Brandenburg]] — Tesla's European factory; 12K employees; production ramp struggles; labor/protest controversies | Sources: 1
+- [[entities/Heinzel]] — Open-source AI sysadmin ruleset (~140 KB Markdown); tool-agnostic; anti-hallucination design; MIT license | Sources: 1
 - [[entities/Humanitec]] — Platform engineering company; coined "IDP"; Platform Orchestrator, Score | Sources: 2
 - [[entities/Kaspar-von-Grunberg]] — CEO Humanitec; coined "Internal Developer Platform"; cognitive load model | Sources: 1
 - [[entities/LM-Studio]] — Local LLM serving GUI; enables self-hosted AI coding; OpenAI-compatible API | Sources: 1
@@ -34,9 +35,10 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Concepts (20)
+## Concepts (22)
 
 - [[concepts/ai-developer-stages]] — Four-stage progression: AI Skeptic → Explorer → Collaborator → Strategist | Sources: 1
+- [[concepts/agentic-development-loop]] — Friction-removal loop; Theory of Constraints in dev workflow; identity shift to agent manager; 5 parallel worktrees | Sources: 1
 - [[concepts/ai-memory-architecture]] — Markdown vs. databases for AI agent memory; failure modes; reconciling both views | Sources: 2
 - [[concepts/agentic-coding-risks]] — Compounding errors, low recall, merchants of complexity; the case for discipline | Sources: 1
 - [[concepts/cloud-sovereignty]] — Data residency, operational/legal independence, sovereignty-washing; EU vendor landscape | Sources: 2
@@ -46,8 +48,9 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/europe-ai-dependency]] — 70% cloud + 85% GPU US-controlled; structural EU vulnerability | Sources: 1
 - [[concepts/experts-leading-experts]] — Apple's management principle: domain experts lead their specialties | Sources: 1
 - [[concepts/forward-deployed-engineer]] — Engineer embedded with users to bridge platform and real-world needs | Sources: 1
+- [[concepts/frugal-architecture]] — Werner Vogels' 7 laws; cost as NFR; frugality = maximizing value; maps to AWS Well-Architected Framework | Sources: 1
 - [[concepts/functional-organization]] — Single-P&L, function-based structure; decision rights follow expertise | Sources: 1
-- [[concepts/golden-paths]] — Opinionated defaults that abstract complexity without restricting freedom; 97% adoption | Sources: 2
+- [[concepts/golden-paths]] — Opinionated defaults that abstract complexity without restricting freedom; origin at Spotify (2014); guardrails over gates; Day 2–50 prioritization; Golden State; composable AI guardrails | Sources: 7
 - [[concepts/hard-conversations]] — Eight techniques for staying curious and humble in difficult discussions | Sources: 1
 - [[concepts/internal-developer-platform]] — Self-service layer for developer infrastructure; IDP | Sources: 2
 - [[concepts/johnny-decimal]] — Static numeric file hierarchy; optimizes for searchability; "10.23 = Taxes 2023" | Sources: 1
@@ -59,12 +62,20 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Summaries (26)
+## Summaries (34)
 
 - [[summaries/dark-side-of-self-service--summary]] — Humanitec; developer self-service anti-patterns; cognitive load model
+- [[summaries/frugal-architecture-summary]] — AWS blog; 7 Frugal Architect laws; Well-Architected Framework mapping; cost as design discipline
+- [[summaries/heinzel-sysadmin-summary]] — Heinzel AI sysadmin tool; Stefan Wintermeyer; anti-hallucination design; dry-run-first workflow
+- [[summaries/productive-with-claude-code-summary]] — Neil Kakkar; 6 weeks at Tano; friction-removal loop; 5 parallel agent worktrees
 - [[summaries/developers-reinvented--summary]] — GitHub CEO; four-stage AI adoption; delegation + verification as new dev role
 - [[summaries/forrester-wave-sovereign-cloud-2026-summary]] — Forrester Wave Q2 2026; 12 vendors; sovereignty-washing; EU-native cloud options
 - [[summaries/forward-deployed-engineer--summary]] — FDE role; AI FDE; embedding platform engineers in app teams
+- [[summaries/golden-path-to-ai-summary]] — InfoWorld/Asay; AI velocity gap; composable AI guardrails; OpenAI-compatible API standard
+- [[summaries/golden-paths-day-50-summary]] — Ransom/von Grünberg; Day 1 vs Day 2–50; frequency×time prioritization; DCM
+- [[summaries/golden-paths-one-size-summary]] — Bryan Ross; guardrails over gates; 17%→86% adoption case study; composable platform
+- [[summaries/golden-paths-what-are-they-summary]] — Haigh/platformengineering.org; five reasons; vending machine model; design methodology
+- [[summaries/spotify-golden-paths-summary]] — Gary Niemen; origin story (Dune); rumour-driven development; success factors; Golden State
 - [[summaries/gigafactory-berlin-summary]] — Wikipedia; Tesla's EU factory; production ramp struggles; labor/protest controversies
 - [[summaries/two-pkm-approaches-summary]] — Crystal Lee; PARA vs. Johnny.Decimal; searchability vs. discoverability framing
 - [[summaries/how-apple-is-organized--summary]] — HBR; Apple's functional org; experts leading experts; discretionary leadership
@@ -97,9 +108,9 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Sources Ingested (18)
+## Sources Ingested (28)
 
-All from `raw/inbox/`. Ingested 2026-04-13.
+All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry below.
 
 1. Dark Side of Self-Service – Humanitec (2021)
 2. Developers, Reinvented – Thomas Dohmke (2025)
@@ -127,6 +138,14 @@ All from `raw/inbox/`. Ingested 2026-04-13.
 24. The Forrester Wave™ Sovereign Cloud Platforms Q2 2026 (clipped 2026-04-17)
 25. Stop Calling It Memory — Jonathan Edwards (2026-03-23, clipped 2026-04-16)
 26. How to Build an AI Second Brain with Claude Code and Obsidian — MindStudio (2026-04-02, clipped 2026-04-16)
+27. Achieving Frugal Architecture using the AWS Well-Architected Framework guidance — Ashley DeLoach & Patrick Yurista (2024-08-14, clipped 2026-04-23)
+28. KI-Assistent Heinzel für die Server-Administration im Überblick — Stefan Wintermeyer, heise.de/iX (2026-04-15, clipped 2026-04-21)
+29. How I'm Productive with Claude Code — Neil Kakkar (2026-03-16, clipped 2026-04-18)
+30. What are golden paths? A guide to streamlining developer workflows — Mallory Haigh, platformengineering.org (2025-01-29, clipped 2026-04-23)
+31. How We Use Golden Paths to Solve Fragmentation in Our Software Ecosystem — Gary Niemen, Spotify Engineering Blog (2020, clipped 2026-04-23)
+32. How to pave golden paths that actually go somewhere — Aeris Ransom, platformengineering.org (2023-12-13, clipped 2026-04-23)
+33. Golden Paths: One Size Does Not Fit All — Bryan Ross, chieftherapyofficer.co.uk (2025-11-22, clipped 2026-04-23)
+34. Building a golden path to AI — Matt Asay, InfoWorld (2025-10-26, clipped 2026-04-23)
 
 ---
 
@@ -139,6 +158,8 @@ All from `raw/inbox/`. Ingested 2026-04-13.
 
 ## Recent Changes
 
+- **2026-04-23**: Ingest of 5 Golden Paths articles — 5 new summaries, major expansion of concepts/golden-paths (2→7 sources); total now 86 pages / 33 sources
+- **2026-04-23**: Ingest of Frugal Architecture (AWS) + Heinzel sysadmin tool + Kakkar Claude Code productivity — 6 new pages; total now 81 pages / 28 sources
 - **2026-04-17**: Ingest of Forrester Wave + Edwards critique + MindStudio tutorial — 7 new pages; total now 75 pages / 25 sources
 - **2026-04-16**: Ingest of Crystal Lee PKM article — 3 new pages (PARA + JD concepts + summary); total now 68 pages / 22 sources
 - **2026-04-16**: Ingest of Gigafactory Berlin-Brandenburg + Tesla Inc. — 6 new pages; electric-vehicles topic created; total now 65 pages / 21 sources

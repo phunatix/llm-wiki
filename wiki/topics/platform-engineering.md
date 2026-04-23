@@ -1,10 +1,10 @@
 ---
 title: Platform Engineering
 type: topic
-source_count: 3
+source_count: 8
 created: 2026-04-13
-last_updated: 2026-04-13
-tags: [devops, platform, developer-experience, idp]
+last_updated: 2026-04-23
+tags: [devops, platform, developer-experience, idp, golden-paths]
 inbound_links: 0
 status: complete
 related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-developer-platform]]", "[[concepts/golden-paths]]", "[[concepts/cognitive-load]]", "[[concepts/forward-deployed-engineer]]", "[[entities/Humanitec]]"]
@@ -45,7 +45,9 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - **Self-service vs. over-abstraction**: Too much self-service overwhelms developers; too much abstraction creates "golden cages"
 - **Build vs. buy**: Should you build your own IDP or use a product like Humanitec?
 - **Culture vs. technology**: "10% technical, 90% cultural change" — the human side often fails even when tech succeeds
-- **AI + platform engineering**: Will agentic AI make platform engineering obsolete, or will platforms need to support AI workloads (GPU orchestration, etc.)?
+- **Gates vs. guardrails**: Mandated monolithic platforms vs. composable guardrails that attract rather than coerce (Ross 2025: 17%→86% adoption by reducing mandatory items to three)
+- **Day 1 vs. Day 2–50**: Most platform teams over-invest in scaffolding/onboarding; ongoing operations (debugging, rollbacks, config changes) are <1% Day 1, 99% everything else
+- **AI + platform engineering**: Will agentic AI make platform engineering obsolete, or will platforms need to support AI workloads (GPU orchestration, model serving, AI velocity gap)?
 
 ## Recent Developments
 
@@ -60,6 +62,9 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - Division of labor is inevitable at scale — the question is where the handoff point is, not whether ops should exist
 - Cognitive load is the right lens for evaluating self-service design
 - Treating developers as users (with feedback loops, metrics, and iteration) is the highest-leverage principle
+- Standardization through attraction beats standardization through control — the measure is whether developers would choose your platform even if not required
+- Prioritize Day 2–50 golden paths: ongoing operations (rollbacks, config changes, debugging) consume 99% of application lifetime; service scaffolding is <1%
+- Dynamic Configuration Management (DCM) resolves the root cause of most Day 2–50 friction: static configs that break when infrastructure changes
 
 ## See Also
 
@@ -72,3 +77,8 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - [[summaries/dark-side-of-self-service--summary]]: Core source on what not to do; the cognitive load model
 - [[summaries/whats-the-future-of-platform-engineering--summary]]: Current state and AI intersection
 - [[summaries/forward-deployed-engineer--summary]]: The FDE role as bridge between platform and users
+- [[summaries/spotify-golden-paths-summary]]: Origin of golden paths; Dune reference; success factors; Golden State concept
+- [[summaries/golden-paths-day-50-summary]]: Day 1 vs Day 2–50 prioritization; DCM as root-cause fix; frequency × time table
+- [[summaries/golden-paths-one-size-summary]]: Guardrails over gates; 17%→86% adoption case study; composable platform design
+- [[summaries/golden-path-to-ai-summary]]: AI velocity gap; composable AI guardrails; OpenAI-compatible API as interface standard
+- [[summaries/golden-paths-what-are-they-summary]]: Foundational definition; five reasons; design methodology

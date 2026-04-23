@@ -1,13 +1,13 @@
 ---
 title: AI & Software Development
 type: topic
-source_count: 4
+source_count: 5
 created: 2026-04-13
-last_updated: 2026-04-13
-tags: [ai, coding-agents, developer-tools, llm]
+last_updated: 2026-04-23
+tags: [ai, coding-agents, developer-tools, llm, developer-productivity]
 inbound_links: 0
 status: complete
-related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/agentic-coding-risks]]", "[[entities/Thomas-Dohmke]]", "[[entities/LM-Studio]]"]
+related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/agentic-coding-risks]]", "[[entities/Thomas-Dohmke]]", "[[entities/LM-Studio]]", "[[concepts/agentic-development-loop]]"]
 ---
 
 # AI & Software Development
@@ -31,6 +31,7 @@ related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/agentic-coding-r
 - [[concepts/ai-developer-stages]]: The four-stage progression from AI Skeptic → AI Strategist
 - [[concepts/agentic-coding-risks]]: Compounding errors, merchant-of-complexity problem, low recall
 - [[concepts/delegation-and-verification]]: The new developer role — delegate to agents, verify output
+- [[concepts/agentic-development-loop]]: The friction-removal loop; Theory of Constraints applied to dev workflow; implementer → agent manager identity shift
 
 ## Key Entities
 
@@ -72,6 +73,7 @@ Speed:                      LOW  ───────────────�
 ## Recent Developments
 
 - **2026-04**: German IT salary data shows AI roles (~77K€ median) not yet commanding premium over general developers
+- **2026-03**: Neil Kakkar (Tano) documents six weeks of Claude Code use; Theory of Constraints framing; 5 parallel agent worktrees; identity shift from implementer to manager
 - **2026-03**: Growing reports of production instability from over-delegated agent coding
 - **2026**: AWS alleged AI-caused outage followed by 90-day "code quality reset"
 - **2025-08**: Self-hosted AI coding stack (LM Studio + Qwen3-Coder + Roo Code) reaches practical usability
@@ -86,5 +88,6 @@ Speed:                      LOW  ───────────────�
 
 - [[summaries/developers-reinvented--summary]]: Most systematic treatment of AI adoption stages and skills
 - [[summaries/thoughts-on-slowing-down--summary]]: Strongest critique of uncritical agentic adoption
+- [[summaries/productive-with-claude-code-summary]]: Practitioner account; Theory of Constraints + friction-removal loop; 6 weeks at Tano
 - [[summaries/self-hosted-ai-coding--summary]]: Practical guide to self-hosted AI coding stack
 - [[summaries/us-cuts-off-tech-to-europe--summary]]: Geopolitical context for AI tool dependency

@@ -1,6 +1,6 @@
 {
   "userName": "",
-  "permissionMode": "yolo",
+  "permissionMode": "normal",
   "model": "sonnet",
   "thinkingBudget": "low",
   "effortLevel": "high",
@@ -42,9 +42,9 @@
       "reasoningSummary": "detailed",
       "environmentVariables": "",
       "environmentHash": "",
-      "installationMethod": "native-windows",
-      "installationMethodsByHost": {},
-      "wslDistroOverride": "",
+      "installationMethodsByHost": {
+        "Olafs-MacBook-Pro.local": "native-windows"
+      },
       "wslDistroOverridesByHost": {}
     }
   },
