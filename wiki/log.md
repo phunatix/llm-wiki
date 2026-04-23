@@ -9,6 +9,26 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 
 ---
 
+## [2026-04-23] ingest | MCP is eating the world — Stainless (2025-06-21)
+
+**Source**: `raw/inbox/Blog -  MCP is eating the world—and it's here to stay.md`
+**Author**: Young-jin Park, Stainless
+
+**Created**:
+- `[[summaries/mcp-is-eating-the-world--summary]]`
+
+**Updated**:
+- `[[concepts/model-context-protocol]]` (source_count 2→3): added "Why MCP Succeeded Where Others Failed" section with historical predecessors table and four-good-enoughs framework; added adoption flywheel; added "designing at the right altitude" principle; added SDK code mode open question
+- `[[topics/ai-software-development]]`: added 2025-06 MCP mainstream adoption to Recent Developments
+
+**Key insights**:
+- Four simultaneous "good enoughs" explain MCP's success: models, protocol, tooling, momentum — all crossed the threshold together
+- "Designing at the right altitude" — the right abstraction boundary doesn't go away; previous approaches coupled tool definition to specific runtimes
+- The adoption flywheel: more tools → better agents → more adoption → models trained on MCP → repeat
+- The spec shipped November 2024; adoption exploded February 2025 — timing is distinct from readiness
+
+---
+
 ## [2026-04-23] lint | Health check + P1 fixes
 
 **Trigger**: Manual health check request

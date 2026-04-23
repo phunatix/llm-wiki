@@ -1,6 +1,6 @@
 # Wiki Index
 
-**Updated**: 2026-04-23 | **Total Pages**: 83 | **Total Sources**: 33
+**Updated**: 2026-04-23 | **Total Pages**: 84 | **Total Sources**: 34
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
@@ -59,7 +59,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/johnny-decimal]] — Static numeric file hierarchy; optimizes for searchability; "10.23 = Taxes 2023" | Sources: 1
 - [[concepts/kubernetes]] — Container orchestration; practical design decisions (ingress, tenancy, logging, host OS); cloud-native ecosystem | Sources: 8
 - [[concepts/llm-wiki-pattern]] — Karpathy's pattern: LLM incrementally builds and maintains a persistent wiki | Sources: 2
-- [[concepts/model-context-protocol]] — Open standard for AI tool/resource interoperability; governance surface for permissions, isolation, observability | Sources: 2
+- [[concepts/model-context-protocol]] — Open standard for AI tool/resource interoperability; governance surface; why MCP succeeded where predecessors failed; four-good-enoughs | Sources: 3
 - [[concepts/marathon-interval-training]] — Backwards-planned intervals: 10RT → HMRT → MRT across training block | Sources: 2
 - [[concepts/para-method]] — Projects/Areas/Resources/Archive; Tiago Forte; optimizes for discoverability | Sources: 1
 - [[concepts/platform-engineering-maturity-model]] — CNCF framework; five aspects (investment, adoption, interfaces, operations, measurement); four stages | Sources: 1
@@ -68,7 +68,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Summaries (34)
+## Summaries (35)
 
 - [[summaries/dark-side-of-self-service--summary]] — Humanitec; developer self-service anti-patterns; cognitive load model
 - [[summaries/frugal-architecture-summary]] — AWS blog; 7 Frugal Architect laws; Well-Architected Framework mapping; cost as design discipline
@@ -96,6 +96,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[summaries/proxmox-influxdb-grafana--summary]] — Proxmox metric server → InfluxDB → Grafana; InfluxQL preferred over Flux
 - [[summaries/readme-file-guide--summary]] — freeCodeCamp; README sections; what/why/how structure
 - [[summaries/self-hosted-ai-coding--summary]] — r/LocalLLaMA; LM Studio + Qwen3-Coder + Roo Code setup guide
+- [[summaries/mcp-is-eating-the-world--summary]] — Stainless; historical predecessors; four-good-enoughs; adoption flywheel; "designing at the right altitude"
 - [[summaries/mindstudio-ai-second-brain-summary]] — MindStudio; practical Claude Code + Obsidian workflow; daily notes, meeting notes, weekly review
 - [[summaries/sre-anything--summary]] — Jennifer Petoff; SRE hierarchy generalized; family emergency example
 - [[summaries/stop-calling-it-memory-summary]] — Jonathan Edwards; markdown ≠ database; SQLite + graph DB as real AI memory
@@ -114,7 +115,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Sources Ingested (28)
+## Sources Ingested (35)
 
 All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry below.
 
@@ -152,6 +153,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 32. How to pave golden paths that actually go somewhere — Aeris Ransom, platformengineering.org (2023-12-13, clipped 2026-04-23)
 33. Golden Paths: One Size Does Not Fit All — Bryan Ross, chieftherapyofficer.co.uk (2025-11-22, clipped 2026-04-23)
 34. Building a golden path to AI — Matt Asay, InfoWorld (2025-10-26, clipped 2026-04-23)
+35. MCP is eating the world—and it's here to stay — Young-jin Park, Stainless (2025-06-21, clipped 2026-04-23)
 
 ---
 
@@ -164,7 +166,8 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 
 ## Recent Changes
 
-- **2026-04-23**: P1 health check fixes — promoted 6 Gen 1 orphan pages to Gen 2 schema (kubernetes, model-context-protocol, platform-engineering-maturity-model, agentic-infrastructure, governance-by-default, cncf); merged 4 Gen 1 duplicates/overlaps into Gen 2 equivalents; deleted 4 Gen 1 pages; total now 92 pages
+- **2026-04-23**: Ingest of MCP article (Stainless) — 1 new summary; major update to concepts/model-context-protocol (historical predecessors, four-good-enoughs, adoption flywheel); total now 84 pages / 35 sources
+- **2026-04-23**: P1 health check fixes — promoted 6 Gen 1 orphan pages to Gen 2 schema (kubernetes, model-context-protocol, platform-engineering-maturity-model, agentic-infrastructure, governance-by-default, cncf); merged 4 Gen 1 duplicates/overlaps into Gen 2 equivalents; deleted 4 Gen 1 pages; total now 83 pages
 - **2026-04-23**: Ingest of 5 Golden Paths articles — 5 new summaries, major expansion of concepts/golden-paths (2→7 sources); total now 86 pages / 33 sources
 - **2026-04-23**: Ingest of Frugal Architecture (AWS) + Heinzel sysadmin tool + Kakkar Claude Code productivity — 6 new pages; total now 81 pages / 28 sources
 - **2026-04-17**: Ingest of Forrester Wave + Edwards critique + MindStudio tutorial — 7 new pages; total now 75 pages / 25 sources

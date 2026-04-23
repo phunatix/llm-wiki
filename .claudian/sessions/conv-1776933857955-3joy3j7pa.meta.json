@@ -4,8 +4,8 @@
   "title": "Explain golden paths",
   "titleGenerationStatus": "success",
   "createdAt": 1776933857955,
-  "updatedAt": 1776961752826,
-  "lastResponseAt": 1776961752826,
+  "updatedAt": 1776967271043,
+  "lastResponseAt": 1776967271043,
   "sessionId": "873795ce-8ff3-4ba3-acc1-a9fee44c2761",
   "providerState": {
     "providerSessionId": "873795ce-8ff3-4ba3-acc1-a9fee44c2761"
@@ -13,11 +13,11 @@
   "usage": {
     "model": "sonnet[1m]",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 617,
-    "cacheReadInputTokens": 120660,
+    "cacheCreationInputTokens": 265,
+    "cacheReadInputTokens": 142367,
     "contextWindow": 1000000,
-    "contextTokens": 121278,
-    "percentage": 12,
-    "contextWindowIsAuthoritative": false
+    "contextTokens": 142633,
+    "percentage": 14,
+    "contextWindowIsAuthoritative": true
   }
 }

@@ -73,6 +73,7 @@ Speed:                      LOW  ───────────────�
 
 ## Recent Developments
 
+- **2025-06**: MCP crosses into mainstream — OpenAI and Google Deepmind adopt it; all major LLM providers now on board; API-first companies racing to expose services as MCP tools; MCP becoming a core layer of how APIs are exposed and consumed by agents
 - **2026-04**: German IT salary data shows AI roles (~77K€ median) not yet commanding premium over general developers
 - **2026-03**: Neil Kakkar (Tano) documents six weeks of Claude Code use; Theory of Constraints framing; 5 parallel agent worktrees; identity shift from implementer to manager
 - **2026-03**: Growing reports of production instability from over-delegated agent coding
