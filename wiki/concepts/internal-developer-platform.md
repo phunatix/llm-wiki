@@ -48,6 +48,12 @@ See [[concepts/cognitive-load]] for the two main failure modes:
 1. Too much exposure → cognitive overload
 2. Too much abstraction → golden cage / black box
 
+## Common Pitfalls
+
+- **Building for fashion, not need**: IDPs built because the category is fashionable — not because teams are clearly blocked — waste significant investment without delivering value
+- **Ignoring culture**: Platform success depends heavily on communication, feedback loops, and iterative user engagement rather than on technology alone; an organizationally unsupported IDP stalls regardless of technical quality
+- **Stopping at scaffolding**: Over-investing in new-service creation (Day 1) while leaving Day 2–50 operations (rollbacks, config changes, debugging) friction-heavy — see [[concepts/golden-paths]] for the prioritization framework
+
 ## See Also
 
 - [[concepts/golden-paths]]
@@ -60,3 +66,4 @@ See [[concepts/cognitive-load]] for the two main failure modes:
 
 - [[summaries/dark-side-of-self-service--summary]]
 - [[summaries/whats-the-future-of-platform-engineering--summary]]
+- [[sources/building-multi-tenant-kubernetes-on-azure-aks]] — Practical IDP concerns in shared Kubernetes clusters; tenancy boundaries and governance

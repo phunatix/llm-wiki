@@ -1,7 +1,7 @@
 ---
 title: "SRE Anything" Framework
 type: concept
-source_count: 1
+source_count: 2
 created: 2026-04-13
 last_updated: 2026-04-13
 tags: [sre, reliability, framework, engineering]
@@ -57,6 +57,20 @@ Developed by Jennifer Petoff (SRE + Program Management at Google), the "How to S
 - **DiRT testing**: Disaster Recovery Testing — stress test your plans before you need them
 - **SPoF avoidance**: Single Points of Failure apply everywhere, not just software
 
+## SRE as a Discipline
+
+Beyond the "SRE Anything" framework, SRE is a distinct engineering discipline with its own principles:
+
+- **Reliability is a product property**: It must be balanced against velocity, cost, and effort — not maximized in isolation. An obsession with 100% uptime at the expense of development speed is anti-SRE
+- **Toil reduction**: Repetitive, automatable operational work is "toil"; SRE's goal is to reduce toil so engineers can focus on systemic improvements rather than repetitive manual tasks
+- **Blameless postmortems**: When things fail, the focus is on system and process failures — not individuals. This is a cultural commitment, not just a process
+- **Observability**: You can only improve what you can see. Monitoring, alerting, and tracing are foundational — not optional add-ons
+- **SLOs over SLAs**: Service Level Objectives (internal targets) are preferred over contractual SLAs because they create space for iteration without breach — the error budget model
+
+SREs are generalist engineers who deliberately work close to production — debugging production incidents, designing for failure, and building automation that reduces their own operational burden.
+
+*Source: [[sources/site-reliability-engineers-we-solve-cooler-problems]] — Google Careers; "We solve cooler problems" framing; production-close generalist engineering role*
+
 ## AI Application
 
 The framework can be codified into a Gemini Gem (AI agent) that walks users through applying the hierarchy to their domain, one level at a time.
@@ -69,3 +83,4 @@ The framework can be codified into a Gemini Gem (AI agent) that walks users thro
 ## Sources
 
 - [[summaries/sre-anything--summary]]
+- [[sources/site-reliability-engineers-we-solve-cooler-problems]] — Google Careers; the SRE role as production-close generalist engineer; "we solve cooler problems" framing

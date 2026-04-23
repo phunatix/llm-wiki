@@ -9,6 +9,40 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 
 ---
 
+## [2026-04-23] lint | Health check + P1 fixes
+
+**Trigger**: Manual health check request
+
+**Issues found**:
+- Two-generation problem: 34 Gen 1 pages (old schema, orphaned, unindexed) coexisted with 77 Gen 2 pages
+- Duplicate IDP pages: `concepts/internal-developer-platform.md` (Gen 2) + `concepts/internal-developer-platforms.md` (Gen 1)
+- 3 Gen 1 concept pages overlapping Gen 2 equivalents (platform-engineering, site-reliability-engineering, ai-assisted-software-development)
+- Index count wrong: said 86, actual was 111
+- No broken wikilinks (clean)
+
+**Actions taken — Promoted (Gen 1 → Gen 2 schema)**:
+- Created `[[concepts/kubernetes]]` — 8-source page on container orchestration, practical design decisions, cloud-native history
+- Created `[[concepts/model-context-protocol]]` — MCP standard; governance framing; registries as control plane
+- Created `[[concepts/platform-engineering-maturity-model]]` — CNCF framework; five aspects; four stages; how to use it
+- Created `[[concepts/agentic-infrastructure]]` — AI agents as first-class platform actors; agent golden paths
+- Created `[[concepts/governance-by-default]]` — Policy-as-code; compliant behavior as default; AI coding scaling implications
+- Promoted `[[entities/cncf]]` — CNCF org; Kubernetes steward; maturity model publisher
+
+**Actions taken — Merged and deleted**:
+- `concepts/internal-developer-platforms.md` (Gen 1) → unique insights merged into `[[concepts/internal-developer-platform]]`; page deleted
+- `concepts/platform-engineering.md` (Gen 1) → role-specialization insight merged into `[[topics/platform-engineering]]`; page deleted
+- `concepts/site-reliability-engineering.md` (Gen 1) → SRE-as-discipline section merged into `[[concepts/sre-anything-framework]]`; page deleted
+- `concepts/ai-assisted-software-development.md` (Gen 1) → platform-governance insight merged into `[[topics/ai-software-development]]`; page deleted
+
+**Index updated**: Total pages 86 → 92; Concepts 22 → 27; Entities 12 → 13
+
+**Remaining P1 Gen 1 pages (not yet addressed)**:
+- `wiki/sources/` (23 pages): Gen 1 source registry; valid files; linked from promoted concept pages; deferred to separate decision
+- `wiki/meta/overview.md`: Meta file; not a content page; left as-is
+- `wiki/entities/cncf.md`: Promoted above ✅
+
+---
+
 ## [2026-04-13] init | Wiki structure created
 
 - Created directory structure: `raw/`, `wiki/`, `templates/`

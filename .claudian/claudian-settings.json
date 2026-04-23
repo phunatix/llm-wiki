@@ -1,7 +1,7 @@
 {
   "userName": "",
-  "permissionMode": "normal",
-  "model": "sonnet",
+  "permissionMode": "yolo",
+  "model": "sonnet[1m]",
   "thinkingBudget": "low",
   "effortLevel": "high",
   "serviceTier": "default",
@@ -28,9 +28,10 @@
       "loadUserSettings": true,
       "enableChrome": false,
       "enableBangBash": false,
-      "enableOpus1M": false,
-      "enableSonnet1M": false,
-      "lastModel": "sonnet",
+      "enableOpus1M": true,
+      "enableSonnet1M": true,
+      "customModels": "",
+      "lastModel": "sonnet[1m]",
       "environmentVariables": "",
       "environmentHash": ""
     },
@@ -43,14 +44,15 @@
       "environmentVariables": "",
       "environmentHash": "",
       "installationMethodsByHost": {
-        "Olafs-MacBook-Pro.local": "native-windows"
+        "Olafs-MacBook-Pro.local": "native-windows",
+        "CDDEA060273": "native-windows"
       },
       "wslDistroOverridesByHost": {}
     }
   },
   "settingsProvider": "claude",
   "savedProviderModel": {
-    "claude": "sonnet"
+    "claude": "sonnet[1m]"
   },
   "savedProviderEffort": {
     "claude": "high"

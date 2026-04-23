@@ -1,6 +1,6 @@
 # Wiki Index
 
-**Updated**: 2026-04-23 | **Total Pages**: 86 | **Total Sources**: 33
+**Updated**: 2026-04-23 | **Total Pages**: 83 | **Total Sources**: 33
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
@@ -18,9 +18,10 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Entities (12)
+## Entities (13)
 
 - [[entities/Apple]] — Company; functional org structure; experts leading experts; 40x revenue growth on same structure | Sources: 1
+- [[entities/cncf]] — Cloud Native Computing Foundation; stewards Kubernetes; publishes Platform Engineering Maturity Model and Platforms White Paper | Sources: 1
 - [[entities/Eric-J-Ma]] — Data scientist; Obsidian + AI PKM system; 12 people managed; 30-40% → <10% PKM overhead | Sources: 1
 - [[entities/Gigafactory-Berlin-Brandenburg]] — Tesla's European factory; 12K employees; production ramp struggles; labor/protest controversies | Sources: 1
 - [[entities/Heinzel]] — Open-source AI sysadmin ruleset (~140 KB Markdown); tool-agnostic; anti-hallucination design; MIT license | Sources: 1
@@ -35,12 +36,13 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Concepts (22)
+## Concepts (27)
 
-- [[concepts/ai-developer-stages]] — Four-stage progression: AI Skeptic → Explorer → Collaborator → Strategist | Sources: 1
-- [[concepts/agentic-development-loop]] — Friction-removal loop; Theory of Constraints in dev workflow; identity shift to agent manager; 5 parallel worktrees | Sources: 1
-- [[concepts/ai-memory-architecture]] — Markdown vs. databases for AI agent memory; failure modes; reconciling both views | Sources: 2
 - [[concepts/agentic-coding-risks]] — Compounding errors, low recall, merchants of complexity; the case for discipline | Sources: 1
+- [[concepts/agentic-development-loop]] — Friction-removal loop; Theory of Constraints in dev workflow; identity shift to agent manager; 5 parallel worktrees | Sources: 1
+- [[concepts/agentic-infrastructure]] — AI agents as first-class platform actors; agent golden paths; platform shifts to supervised autonomous change | Sources: 1
+- [[concepts/ai-developer-stages]] — Four-stage progression: AI Skeptic → Explorer → Collaborator → Strategist | Sources: 1
+- [[concepts/ai-memory-architecture]] — Markdown vs. databases for AI agent memory; failure modes; reconciling both views | Sources: 2
 - [[concepts/cloud-sovereignty]] — Data residency, operational/legal independence, sovereignty-washing; EU vendor landscape | Sources: 2
 - [[concepts/cognitive-load]] — Mental effort of operating systems; key metric for platform/self-service design | Sources: 2
 - [[concepts/developer-self-service]] — "You build it, you run it" at scale; division of labor reality; research data | Sources: 2
@@ -51,14 +53,18 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/frugal-architecture]] — Werner Vogels' 7 laws; cost as NFR; frugality = maximizing value; maps to AWS Well-Architected Framework | Sources: 1
 - [[concepts/functional-organization]] — Single-P&L, function-based structure; decision rights follow expertise | Sources: 1
 - [[concepts/golden-paths]] — Opinionated defaults that abstract complexity without restricting freedom; origin at Spotify (2014); guardrails over gates; Day 2–50 prioritization; Golden State; composable AI guardrails | Sources: 7
+- [[concepts/governance-by-default]] — Policy encoded into the delivery path; compliant behavior as the easy path; scales to AI-generated code | Sources: 1
 - [[concepts/hard-conversations]] — Eight techniques for staying curious and humble in difficult discussions | Sources: 1
 - [[concepts/internal-developer-platform]] — Self-service layer for developer infrastructure; IDP | Sources: 2
 - [[concepts/johnny-decimal]] — Static numeric file hierarchy; optimizes for searchability; "10.23 = Taxes 2023" | Sources: 1
+- [[concepts/kubernetes]] — Container orchestration; practical design decisions (ingress, tenancy, logging, host OS); cloud-native ecosystem | Sources: 8
 - [[concepts/llm-wiki-pattern]] — Karpathy's pattern: LLM incrementally builds and maintains a persistent wiki | Sources: 2
+- [[concepts/model-context-protocol]] — Open standard for AI tool/resource interoperability; governance surface for permissions, isolation, observability | Sources: 2
 - [[concepts/marathon-interval-training]] — Backwards-planned intervals: 10RT → HMRT → MRT across training block | Sources: 2
 - [[concepts/para-method]] — Projects/Areas/Resources/Archive; Tiago Forte; optimizes for discoverability | Sources: 1
+- [[concepts/platform-engineering-maturity-model]] — CNCF framework; five aspects (investment, adoption, interfaces, operations, measurement); four stages | Sources: 1
 - [[concepts/plain-text-first]] — Choosing Markdown for future-proofing; proved ideal for AI-augmented workflows | Sources: 2
-- [[concepts/sre-anything-framework]] — SRE reliability hierarchy generalized to any domain | Sources: 1
+- [[concepts/sre-anything-framework]] — SRE reliability hierarchy generalized to any domain; SRE as discipline: reliability vs. velocity, toil reduction, blameless culture | Sources: 2
 
 ---
 
@@ -158,6 +164,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 
 ## Recent Changes
 
+- **2026-04-23**: P1 health check fixes — promoted 6 Gen 1 orphan pages to Gen 2 schema (kubernetes, model-context-protocol, platform-engineering-maturity-model, agentic-infrastructure, governance-by-default, cncf); merged 4 Gen 1 duplicates/overlaps into Gen 2 equivalents; deleted 4 Gen 1 pages; total now 92 pages
 - **2026-04-23**: Ingest of 5 Golden Paths articles — 5 new summaries, major expansion of concepts/golden-paths (2→7 sources); total now 86 pages / 33 sources
 - **2026-04-23**: Ingest of Frugal Architecture (AWS) + Heinzel sysadmin tool + Kakkar Claude Code productivity — 6 new pages; total now 81 pages / 28 sources
 - **2026-04-17**: Ingest of Forrester Wave + Edwards critique + MindStudio tutorial — 7 new pages; total now 75 pages / 25 sources

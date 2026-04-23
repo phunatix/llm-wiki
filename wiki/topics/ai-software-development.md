@@ -69,6 +69,7 @@ Speed:                      LOW  ───────────────�
 - Bad agent tasks: architecture decisions, anything requiring full-codebase context
 - Self-hosted AI coding is increasingly viable (LM Studio + Qwen3-Coder + Roo Code)
 - Europe's 70%+ dependency on US cloud for AI is a structural vulnerability
+- As agent autonomy increases, platform and governance concerns become inseparable from developer workflow concerns — a developer choosing an AI tool is now also making an infrastructure and security decision
 
 ## Recent Developments
 

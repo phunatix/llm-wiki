@@ -54,6 +54,7 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - **2025-2026**: Gartner predicts 80% of software engineering orgs will have a platform team by 2026
 - **2025**: AI/agentic coding tools creating new demands on platforms (GPU orchestration, model serving)
 - **2025**: DORA and Humanitec surveys show platform engineering "fledgling at best" — adoption issues persist
+- **2025**: The platform engineering discipline is specializing into more focused sub-roles: DevEx engineering, platform security, observability engineering, AI enablement, and platform product management — reflecting that the "platform team" label now covers a broader surface than it did five years ago
 
 ## Key Insights
 
