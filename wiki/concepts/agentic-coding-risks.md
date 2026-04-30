@@ -1,13 +1,13 @@
 ---
 title: Agentic Coding Risks
 type: concept
-source_count: 1
+source_count: 2
 created: 2026-04-13
-last_updated: 2026-04-13
+last_updated: 2026-04-29
 tags: [ai, coding-agents, software-quality, risk]
 inbound_links: 0
 status: complete
-related_pages: ["[[concepts/ai-developer-stages]]", "[[topics/ai-software-development]]"]
+related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/harness-engineering]]", "[[topics/ai-software-development]]"]
 ---
 
 # Agentic Coding Risks
@@ -75,6 +75,23 @@ Dangerous to delegate:
 - Write architecture and API by hand — the act of writing introduces useful friction
 - Keep yourself in the loop; understanding the system enables you to fix it when something goes wrong
 
+## The Internal Quality Problem
+
+A subtler risk than outright bugs: agents consistently produce code that *works* but *degrades internal quality* — without the human noticing until the codebase has accumulated significant technical debt.
+
+Concrete pattern observed by Erik Doernenburg (Thoughtworks) implementing GitLab support in Swift using Claude Code:
+
+- **Wrong type semantics fixed by surface-level patch**: Agent declared all API token arguments as non-optional (`String`) when they should be optional (`String?`). When a compiler error surfaced later, the agent's proposed fix was to spray `?? ""` (empty-string default) at every call site — technically compiling, but destroying the semantic intent of Swift's optional type system. The correct fix was a one-character change to the function signature.
+- **Unnecessary complexity introduced**: Agent proposed adding a cache where none was needed.
+- **Missed existing utilities**: Agent duplicated URL construction logic that already existed in the codebase, without implementing all the existing functionality (e.g., base URL override for testing).
+- **Hallucinated API behavior**: Agent insisted a field existed in the GitLab API response when it didn't, requiring repeated correction before the agent accepted the human's correction.
+
+In all these cases the generated code compiled and the features worked. The problems were invisible to automated checks, and each one individually seemed minor. Collectively they represent a systematic bias toward local, immediate solutions over coherent, idiomatic code.
+
+The implication: code review by a human with deep language knowledge remains necessary for internal quality — or harness controls (type checkers, linters, architectural sensors) must be in place to catch these patterns automatically.
+
+See [[concepts/harness-engineering]] for the framework that addresses this.
+
 ## Contradictions
 
 - [[concepts/ai-developer-stages]] (Dohmke) presents a more optimistic view of full agentic delegation (Stage 4 "AI Strategist")
@@ -83,8 +100,10 @@ Dangerous to delegate:
 ## See Also
 
 - [[concepts/ai-developer-stages]]
+- [[concepts/harness-engineering]] — the framework for building automated controls that catch these quality failures
 - [[topics/ai-software-development]]
 
 ## Sources
 
 - [[summaries/thoughts-on-slowing-down--summary]]
+- [[summaries/assessing-internal-quality-with-agent--summary]] — Concrete Swift case study; type system degradation; unnecessary complexity; missed utilities; internal quality vs external correctness (Doernenburg, Thoughtworks, 2026)

@@ -1,6 +1,6 @@
 	# Wiki Index
 
-**Updated**: 2026-04-23 | **Total Pages**: 84 | **Total Sources**: 34
+**Updated**: 2026-04-29 | **Total Pages**: 93 | **Total Sources**: 41
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
@@ -36,7 +36,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Concepts (27)
+## Concepts (29)
 
 - [[concepts/agentic-coding-risks]] — Compounding errors, low recall, merchants of complexity; the case for discipline | Sources: 1
 - [[concepts/agentic-development-loop]] — Friction-removal loop; Theory of Constraints in dev workflow; identity shift to agent manager; 5 parallel worktrees | Sources: 1
@@ -54,6 +54,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/functional-organization]] — Single-P&L, function-based structure; decision rights follow expertise | Sources: 1
 - [[concepts/golden-paths]] — Opinionated defaults that abstract complexity without restricting freedom; origin at Spotify (2014); guardrails over gates; Day 2–50 prioritization; Golden State; composable AI guardrails | Sources: 7
 - [[concepts/governance-by-default]] — Policy encoded into the delivery path; compliant behavior as the easy path; scales to AI-generated code | Sources: 1
+- [[concepts/harness-engineering]] — Feedforward guides + feedback sensors for coding agents; computational vs inferential sensors; three dimensions; humans on the loop; agentic flywheel | Sources: 2
 - [[concepts/hard-conversations]] — Eight techniques for staying curious and humble in difficult discussions | Sources: 1
 - [[concepts/internal-developer-platform]] — Self-service layer for developer infrastructure; IDP | Sources: 2
 - [[concepts/johnny-decimal]] — Static numeric file hierarchy; optimizes for searchability; "10.23 = Taxes 2023" | Sources: 1
@@ -64,15 +65,20 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/para-method]] — Projects/Areas/Resources/Archive; Tiago Forte; optimizes for discoverability | Sources: 1
 - [[concepts/platform-engineering-maturity-model]] — CNCF framework; five aspects (investment, adoption, interfaces, operations, measurement); four stages | Sources: 1
 - [[concepts/plain-text-first]] — Choosing Markdown for future-proofing; proved ideal for AI-augmented workflows | Sources: 2
+- [[concepts/spec-driven-development]] — Specs as source of truth; three levels (spec-first/anchored/as-source); four-phase workflow; MDD parallel; spec-once failure mode | Sources: 4
 - [[concepts/sre-anything-framework]] — SRE reliability hierarchy generalized to any domain; SRE as discipline: reliability vs. velocity, toil reduction, blameless culture | Sources: 2
 
 ---
 
-## Summaries (35)
+## Summaries (42)
 
+- [[summaries/assessing-internal-quality-with-agent--summary]] — Doernenburg/Thoughtworks; Swift CCMenu case study; type system degradation; working code ≠ quality code
+- [[summaries/building-elite-ai-engineering-culture--summary]] — cjroth; Taste×Discipline×Leverage formula; exemplar companies; stacked PRs; AGENTS.md; design engineering
 - [[summaries/dark-side-of-self-service--summary]] — Humanitec; developer self-service anti-patterns; cognitive load model
 - [[summaries/frugal-architecture-summary]] — AWS blog; 7 Frugal Architect laws; Well-Architected Framework mapping; cost as design discipline
+- [[summaries/harness-engineering-for-coding-agents--summary]] — Thoughtworks; feedforward guides + feedback sensors; three dimensions; computational vs inferential; harness templates
 - [[summaries/heinzel-sysadmin-summary]] — Heinzel AI sysadmin tool; Stefan Wintermeyer; anti-hallucination design; dry-run-first workflow
+- [[summaries/humans-and-agents-software-loops--summary]] — Kief Morris/Thoughtworks; why/how loop model; outside/in/on the loop; agentic flywheel
 - [[summaries/productive-with-claude-code-summary]] — Neil Kakkar; 6 weeks at Tano; friction-removal loop; 5 parallel agent worktrees
 - [[summaries/developers-reinvented--summary]] — GitHub CEO; four-stage AI adoption; delegation + verification as new dev role
 - [[summaries/forrester-wave-sovereign-cloud-2026-summary]] — Forrester Wave Q2 2026; 12 vendors; sovereignty-washing; EU-native cloud options
@@ -98,13 +104,16 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[summaries/self-hosted-ai-coding--summary]] — r/LocalLLaMA; LM Studio + Qwen3-Coder + Roo Code setup guide
 - [[summaries/mcp-is-eating-the-world--summary]] — Stainless; historical predecessors; four-good-enoughs; adoption flywheel; "designing at the right altitude"
 - [[summaries/mindstudio-ai-second-brain-summary]] — MindStudio; practical Claude Code + Obsidian workflow; daily notes, meeting notes, weekly review
+- [[summaries/spec-driven-development-spec-kit--summary]] — GitHub; Spec Kit four-phase workflow; intent as source of truth; greenfield/feature/legacy use cases
 - [[summaries/sre-anything--summary]] — Jennifer Petoff; SRE hierarchy generalized; family emergency example
 - [[summaries/stop-calling-it-memory-summary]] — Jonathan Edwards; markdown ≠ database; SQLite + graph DB as real AI memory
 - [[summaries/staying-open-in-hard-conversations--summary]] — Berkeley; eight techniques for curiosity and humility in hard conversations
 - [[summaries/tesla-inc-summary]] — Wikipedia; Tesla company overview 2003–2026; Musk political backlash; pivot to robotics
 - [[summaries/tesla-model-y-summary]] — Wikipedia; world's best-selling car 2023; Juniper refresh; Giga Press; door handle safety controversy
 - [[summaries/thoughts-on-slowing-down--summary]] — Mario Zechner; agentic coding risks; compounding errors; slow down
+- [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Böckeler/Thoughtworks; three SDD levels; Kiro/Spec Kit/Tessl comparison; MDD parallel; skeptical view
 - [[summaries/us-cuts-off-tech-to-europe--summary]] — Europe's AI/cloud dependency; 70% US cloud; no competitive EU AI stack
+- [[summaries/using-sdd-with-claude-code--summary]] — Heeki Park; practitioner account; spec-once failure mode; upfront planning ROI; Sonnet vs Opus limits
 - [[summaries/whats-the-future-of-platform-engineering--summary]] — Humanitec/DORA; PE is 90% cultural; AI intersection; Gartner 80% by 2026
 
 ---
@@ -115,7 +124,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Sources Ingested (35)
+## Sources Ingested (41)
 
 All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry below.
 
@@ -154,6 +163,15 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 33. Golden Paths: One Size Does Not Fit All — Bryan Ross, chieftherapyofficer.co.uk (2025-11-22, clipped 2026-04-23)
 34. Building a golden path to AI — Matt Asay, InfoWorld (2025-10-26, clipped 2026-04-23)
 35. MCP is eating the world—and it's here to stay — Young-jin Park, Stainless (2025-06-21, clipped 2026-04-23)
+36. Assessing internal quality while coding with an agent — Erik Doernenburg, Thoughtworks (2026-01-27, clipped 2026-04-29)
+37. Building An Elite AI Engineering Culture In 2026 — CJ Roth (2026-02-18, clipped 2026-04-29)
+38. Harness engineering for coding agent users — Thoughtworks/martinfowler.com (2026-04-02, clipped 2026-04-29)
+39. Humans and Agents in Software Engineering Loops — Kief Morris, Thoughtworks (2026, clipped 2026-04-29)
+40. Spec-driven development with AI: Get started with a new open source toolkit — Den Delimarsky, GitHub (2025-09-02, clipped 2026-04-29)
+41. Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl — Birgitta Böckeler, Thoughtworks (2025-10-15, clipped 2026-04-29)
+42. Using spec-driven development with Claude Code — Heeki Park (2026-03-01, clipped 2026-04-29)
+
+*(Sources 2 and 4 in inbox — German IT emigration and property vs. ETF articles — intentionally not ingested; outside current wiki scope)*
 
 ---
 
@@ -166,6 +184,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 
 ## Recent Changes
 
+- **2026-04-29**: Batch ingest of 7 articles — 2 new concepts (harness-engineering, spec-driven-development), 7 new summaries; major updates to topics/ai-software-development and concepts/agentic-coding-risks; 2 German personal articles intentionally skipped; total now 93 pages / 41 sources
 - **2026-04-23**: Ingest of MCP article (Stainless) — 1 new summary; major update to concepts/model-context-protocol (historical predecessors, four-good-enoughs, adoption flywheel); total now 84 pages / 35 sources
 - **2026-04-23**: P1 health check fixes — promoted 6 Gen 1 orphan pages to Gen 2 schema (kubernetes, model-context-protocol, platform-engineering-maturity-model, agentic-infrastructure, governance-by-default, cncf); merged 4 Gen 1 duplicates/overlaps into Gen 2 equivalents; deleted 4 Gen 1 pages; total now 83 pages
 - **2026-04-23**: Ingest of 5 Golden Paths articles — 5 new summaries, major expansion of concepts/golden-paths (2→7 sources); total now 86 pages / 33 sources

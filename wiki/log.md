@@ -9,6 +9,45 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 
 ---
 
+## [2026-04-29] ingest | Batch ingest — 7 articles on AI-assisted development (Thoughtworks + GitHub + cjroth + Heeki Park)
+
+**Sources**:
+- `raw/inbox/Assessing internal quality while coding with an agent.md` — Erik Doernenburg, Thoughtworks
+- `raw/inbox/Building An Elite AI Engineering Culture In 2026.md` — CJ Roth
+- `raw/inbox/Harness engineering for coding agent users.md` — Thoughtworks
+- `raw/inbox/Humans and Agents in Software Engineering Loops.md` — Kief Morris, Thoughtworks
+- `raw/inbox/Spec-driven development with AI Get started with a new open source toolkit.md` — GitHub
+- `raw/inbox/Understanding Spec-Driven-Development Kiro, spec-kit, and Tessl.md` — Birgitta Böckeler, Thoughtworks
+- `raw/inbox/Using spec-driven development with Claude Code.md` — Heeki Park
+
+**Skipped** (intentionally out of scope):
+- `raw/inbox/Auswandern Als ITler in den USA arbeiten.md` — German IT emigration; personal career topic
+- `raw/inbox/Eigenheim vs. ETF Was sich für den langfristigen Vermögensaufbau lohnt.md` — Property vs. ETF investing; personal finance topic
+
+**Created**:
+- `[[concepts/harness-engineering]]` — New concept; feedforward guides + feedback sensors; computational vs inferential sensors; three dimensions; humans on/in/outside the loop; agentic flywheel; harness templates
+- `[[concepts/spec-driven-development]]` — New concept; three levels (spec-first/anchored/as-source); four-phase workflow; spec-once failure mode; MDD parallel; tool landscape; critical view
+- `[[summaries/harness-engineering-for-coding-agents--summary]]`
+- `[[summaries/humans-and-agents-software-loops--summary]]`
+- `[[summaries/assessing-internal-quality-with-agent--summary]]`
+- `[[summaries/building-elite-ai-engineering-culture--summary]]`
+- `[[summaries/spec-driven-development-spec-kit--summary]]`
+- `[[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]]`
+- `[[summaries/using-sdd-with-claude-code--summary]]`
+
+**Updated**:
+- `[[concepts/agentic-coding-risks]]` — Added "The Internal Quality Problem" section with Doernenburg's CCMenu case study; source_count 1→2
+- `[[topics/ai-software-development]]` — Added harness engineering + SDD to core concepts; 6 new Key Insights (Taste×Discipline×Leverage, AI as mirror, design engineering, AGENTS.md, working code ≠ quality code); 4 new Recent Developments; 8 new Sources by Relevance entries; source_count 5→12
+
+**Key insights added to wiki**:
+- Working code ≠ quality code: agents systematically degrade internal quality in ways that compile but accumulate as debt
+- Humans on the loop (not in the loop): build the harness that makes agents self-regulate rather than reviewing every line
+- The agentic flywheel: agents improving their own harness → self-improving systems
+- Taste × Discipline × Leverage: the multiplicative formula for elite AI engineering culture
+- Three levels of SDD: spec-first is the practice; spec-anchored is the aspiration; spec-as-source carries real MDD-parallel risks
+
+---
+
 ## [2026-04-23] ingest | MCP is eating the world — Stainless (2025-06-21)
 
 **Source**: `raw/inbox/Blog -  MCP is eating the world—and it's here to stay.md`
