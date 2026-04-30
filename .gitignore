@@ -1,2 +1,7 @@
 .DS_Store
 .obsidian/
+
+# Quartz build artifacts
+quartz/node_modules/
+quartz/public/
+quartz/.quartz-cache/
