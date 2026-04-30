@@ -1,5 +1,5 @@
 ---
-title: "SRE Anything" Framework
+title: '"SRE Anything" Framework'
 type: concept
 source_count: 2
 created: 2026-04-13

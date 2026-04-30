@@ -1,5 +1,5 @@
 ---
-title: Site Reliability Engineers: We solve cooler problems
+title: "Site Reliability Engineers: We solve cooler problems"
 type: source
 status: active
 created: 2026-04-10

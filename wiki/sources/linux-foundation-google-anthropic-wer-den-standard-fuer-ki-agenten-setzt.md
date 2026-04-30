@@ -1,5 +1,5 @@
 ---
-title: Linux Foundation, Google, Anthropic: Wer den Standard für KI-Agenten setzt
+title: "Linux Foundation, Google, Anthropic: Wer den Standard für KI-Agenten setzt"
 type: source
 status: active
 created: 2026-04-10

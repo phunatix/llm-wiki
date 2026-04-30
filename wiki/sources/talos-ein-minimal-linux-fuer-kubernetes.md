@@ -1,5 +1,5 @@
 ---
-title: Talos: Ein Minimal-Linux für Kubernetes
+title: "Talos: Ein Minimal-Linux für Kubernetes"
 type: source
 status: active
 created: 2026-04-10
