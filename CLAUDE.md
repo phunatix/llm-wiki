@@ -8,11 +8,12 @@ This document defines the structure, conventions, and workflows for maintaining 
 
 ### Raw Sources (Immutable)
 - **Location**: `raw/` directory
-- **Subdirectories**: `articles/`, `papers/`, `books/`, `videos/`, `notes/`, `assets/` (images, data)
+- **Subdirectories**: `inbox/` (unprocessed drops), `articles/`, `sources/` (canonical after ingest), `guides/`, `notes/`, `assets/` (images, data)
 - **Rules**: 
   - Never modified by the LLM
   - Source of truth for all knowledge
   - Original URLs/citations preserved in frontmatter
+  - After ingest, sources move from `inbox/` to `sources/` (on user request)
 
 ### The Wiki (LLM-Generated)
 - **Location**: `wiki/` directory
@@ -27,7 +28,26 @@ This document defines the structure, conventions, and workflows for maintaining 
 ### Special Files
 - `wiki/index.md` — content-oriented catalog (updated on every ingest)
 - `wiki/log.md` — append-only chronological record
+- `wiki/meta/overview.md` — current scope, goals, and major themes
 - `CLAUDE.md` — this schema file (evolves with your needs)
+
+### Publishing Layer (Quartz)
+- **Location**: `quartz/` directory (Quartz v4.5.2)
+- **Purpose**: Publishes the `wiki/` directory as a static site to GitHub Pages
+- **URL**: `phunatix.github.io/llm-wiki`
+- **CI/CD**: `.github/workflows/deploy.yml` — auto-deploys on push to `main`
+- **Build command**: `npx quartz build -d ../wiki` (run from `quartz/`)
+- **Local preview**: `npm run serve` (from `quartz/`)
+- **Config files**:
+  - `quartz/quartz.config.ts` — site title, base URL, theme, plugins, ignore patterns
+  - `quartz/quartz.layout.ts` — page layout components (sidebar, graph, TOC, backlinks)
+- **Ignored by Quartz**: `private/`, `templates/`, `.obsidian/`, `log.md`
+- **Key features**: SPA navigation, search, graph view, backlinks, dark mode, reader mode, RSS, sitemap, OG images, LaTeX (KaTeX)
+- **Draft filtering**: Quartz `RemoveDrafts` plugin excludes pages with `draft: true` in frontmatter
+- **Rules**:
+  - Wiki content changes are the primary concern; Quartz config rarely needs changes
+  - Quartz rebuilds the entire `wiki/` directory on each deploy — no manual build step needed
+  - Do not commit `quartz/node_modules/`, `quartz/public/`, or `quartz/.quartz-cache/` (gitignored)
 
 ---
 
@@ -243,17 +263,64 @@ Append-only, with consistent prefix for parseability:
 
 ---
 
-## 10. Tools & Optional Enhancements
+## 10. Publishing with Quartz
 
-- **Obsidian Graph View**: Visualize wiki connectivity; identify hubs and orphans
-- **Dataview**: Query pages by frontmatter (e.g., `source_count > 5`)
-- **Marp**: Generate presentations from wiki content
-- **Search**: Use Ctrl+Shift+F in Obsidian; for large wikis, consider [qmd](https://github.com/tobi/qmd)
-- **Version Control**: This wiki is a git repo; you get commit history for free
+The wiki is published as a static website via [Quartz v4](https://quartz.jzhao.xyz/).
+
+### How it works
+- Quartz reads all markdown files in `wiki/` and generates a static site
+- Deployed automatically to GitHub Pages on every push to `main` via `.github/workflows/deploy.yml`
+- Supports Obsidian-flavored markdown (wikilinks, callouts, etc.)
+
+### Frontmatter considerations for publishing
+- Pages with `draft: true` in frontmatter are excluded from the published site
+- The `title` frontmatter field becomes the HTML page title
+- Tags render as clickable links on the published site
+- Dates use `frontmatter > git > filesystem` priority for "created" and "modified"
+
+### What's excluded from publishing
+- `templates/` — page templates (Quartz ignore pattern)
+- `log.md` — internal operation log (Quartz ignore pattern)
+- `.obsidian/` — Obsidian settings (Quartz ignore pattern)
+- `private/` — any private content (Quartz ignore pattern)
+
+### Local development
+```bash
+cd quartz
+npm ci
+npm run serve    # starts dev server at localhost:8080
+```
+
+### LLM guidelines for publishing
+- When creating wiki pages, ensure frontmatter is valid YAML (Quartz will fail on malformed frontmatter)
+- Use standard markdown image syntax or Obsidian embeds — Quartz handles both
+- Wikilinks (`[[page]]`) work in Quartz; it resolves them using shortest-path matching
+- Do not modify Quartz config or layout files unless explicitly asked
 
 ---
 
-## 11. Evolving the Schema
+## 11. Tools & Integrations
+
+### Authoring (Obsidian)
+- **Graph View**: Visualize wiki connectivity; identify hubs and orphans
+- **Dataview**: Query pages by frontmatter (e.g., `source_count > 5`)
+- **Search**: Ctrl+Shift+F for full-text; Cmd+P for quick open
+
+### Publishing (Quartz)
+- **Site**: `phunatix.github.io/llm-wiki`
+- **Search**: Full-text search built into the published site (FlexSearch)
+- **Graph**: Interactive graph view on every page
+- **Backlinks**: Auto-generated on the published site
+- **RSS**: Available at `/index.xml`
+
+### Infrastructure
+- **Version Control**: Git — commit history for free
+- **CI/CD**: GitHub Actions — deploy on push to `main`
+- **Hosting**: GitHub Pages
+
+---
+
+## 12. Evolving the Schema
 
 This schema is **not final**. As you build the wiki:
 - You'll discover page types that don't fit the template
