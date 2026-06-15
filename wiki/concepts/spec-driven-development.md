@@ -1,144 +1,131 @@
 ---
-title: Spec-Driven Development (SDD)
+title: Spec-Driven Development
 type: concept
 source_count: 4
-created: 2026-04-29
-last_updated: 2026-04-29
-tags: [ai-agents, coding-agents, specifications, developer-workflow, software-engineering]
-inbound_links: 0
+created: 2026-06-15
+last_updated: 2026-06-15
+tags:
+  - concept
+  - ai-software-development
+  - methodology
+  - coding-agents
+related_pages:
+  - concepts/agentic-development-loop
+  - concepts/harness-engineering
+  - concepts/agentic-coding-risks
+  - topics/ai-software-development
 status: complete
-related_pages: ["[[concepts/harness-engineering]]", "[[concepts/agentic-coding-risks]]", "[[concepts/agentic-development-loop]]", "[[topics/ai-software-development]]"]
 ---
 
-# Spec-Driven Development (SDD)
+# Spec-Driven Development
 
-**Domain**: AI-Assisted Software Development / Engineering Practice
+**Domain**: AI-Assisted Software Engineering / Methodology
 
-**One-line definition**: A development practice where structured, behavior-oriented specifications written in natural language precede code generation — specs serve as the shared source of truth between humans and AI agents, replacing vague prompts with precise intent.
+**One-line definition**: An approach to AI-assisted coding where a structured specification is written *before* prompting the AI — the spec becomes the source of truth that drives implementation rather than ad hoc prompting ("vibe coding").
 
 ---
 
-## The Problem It Addresses
+## Definition
 
-Vague prompting forces the AI to guess at thousands of unstated requirements. The model makes reasonable assumptions — some will be wrong, and you often won't discover which ones until deep into implementation. SDD replaces guess-work with precision: the agent knows *what* to build (spec), *how* to build it (plan), and *in what order* (tasks) before writing a line of code.
+Spec-Driven Development (SDD) emerged as a structured response to the chaos of unconstrained AI code generation. The core principle: instead of describing what you want in a chat message and hoping for the best, you write an explicit, structured document (the "spec") that captures intent, constraints, and design decisions. The AI then implements against this spec.
 
-> "We treat coding agents like search engines when we should be treating them more like literal-minded pair programmers. They excel at pattern recognition but still need unambiguous instructions." — GitHub Spec Kit
+**GitHub's framing**:
+> "We're moving from 'code is the source of truth' to 'intent is the source of truth.' With AI, the specification becomes the source of truth and determines what gets built."
+
+**Tessl's framing**:
+> "A development approach where specs — not code — are the primary artifact. Specs describe intent in structured, testable language, and agents generate code to match them."
 
 ---
 
 ## Three Levels of SDD
 
-Not all "spec-driven" approaches are the same. Birgitta Böckeler (Thoughtworks) identifies a useful taxonomy:
+Birgitta Böckeler (Thoughtworks) identifies three levels of commitment — each builds on the previous:
 
 | Level | Description | Spec lifecycle |
 |---|---|---|
-| **Spec-first** | A well-thought-out spec is written before coding, then used for the task at hand | Spec may be discarded after the task is complete |
-| **Spec-anchored** | Spec is kept after the task and continues to serve as the reference for evolution and maintenance | Spec lives as long as the feature |
-| **Spec-as-source** | The spec is the primary artifact; humans only edit the spec, never the code directly | Code is generated from spec; code files may be marked `// GENERATED — DO NOT EDIT` |
+| **Spec-first** | Write a spec before the AI session; use it to guide implementation; discard after | Created per task, then deleted |
+| **Spec-anchored** | Keep the spec after the task and maintain it as the feature evolves | Lives alongside the code long-term |
+| **Spec-as-source** | The spec *is* the primary artifact; humans only edit the spec, never the generated code | Code is marked "GENERATED FROM SPEC — DO NOT EDIT" |
 
-Most current tools implement spec-first only. Spec-anchored is the aspiration of some tools (GitHub Spec Kit says specs should be "living artifacts"). Spec-as-source is the most ambitious level — currently explored by Tessl, with direct parallels to 1990s model-driven development (MDD).
-
----
-
-## The Spec-Once Failure Mode
-
-The most common failure in practice: a thorough spec launches the project, but as implementation proceeds the spec is abandoned. The spec-once failure mode looks like spec-first but produces the worst outcome — the spec is neither maintained nor useful. The discipline of revisiting and updating the spec at each implementation step is what separates real SDD from spec-once.
+Most practitioners operate at **spec-first** but aspire toward spec-anchored. Spec-as-source (implemented by Tessl) is the most ambitious and the least proven in practice.
 
 ---
 
-## What Is a Spec?
+## The Four-Phase Workflow (GitHub Spec Kit)
 
-A spec is a **structured, behavior-oriented artifact** written in natural language that expresses software functionality and serves as guidance to AI coding agents.
+GitHub's **Spec Kit** implements the most widely-adopted SDD workflow:
 
-Useful distinction: **spec vs. memory bank**
-- **Memory bank** (AGENTS.md, CLAUDE.md, architecture.md): persistent context relevant to *all* coding sessions in the codebase — project-wide conventions, stack description, coding standards
-- **Spec**: task-specific — relevant only to the feature or change currently being built; scoped to a particular user journey or behavior
+1. **Specify**: Describe what you're building and *why* — user journeys, outcomes, success criteria. No technical details yet.
+2. **Plan**: Provide your tech stack, architectural constraints, compliance requirements. AI generates a technical plan.
+3. **Tasks**: AI breaks the spec + plan into small, independently implementable and testable chunks.
+4. **Implement**: AI executes tasks one by one. Developer reviews focused, bounded changes.
 
-A spec is closer to a Product Requirements Document (PRD) than to a technical design. It should describe user journeys, outcomes, and what success looks like — not implementation choices (those belong in the plan phase).
-
----
-
-## Four-Phase Workflow (Specify → Plan → Tasks → Implement)
-
-*As defined by GitHub Spec Kit; variations exist across tools*
-
-**1. Specify** — Provide a high-level description of *what* to build and *why*. Focus on user journeys, experiences, and outcomes. Who uses this? What problem does it solve? What does success look like? The agent fleshes out the details into a full specification. Result: a living artifact.
-
-**2. Plan** — Provide the technical direction: stack, architecture, constraints, integration requirements, performance targets, compliance needs. The agent generates a comprehensive technical plan. Make internal architectural guidelines available here — the agent integrates your standards directly into the plan. Multiple plan variants can be generated for comparison.
-
-**3. Tasks** — The agent breaks the spec + plan into small, reviewable, independently implementable chunks. Each task should be testable in isolation. Instead of "build authentication," you get "create a user registration endpoint that validates email format and returns a 400 with a structured error for invalid input."
-
-**4. Implement** — The agent tackles tasks one by one (or in parallel where applicable). The developer reviews focused changes that solve specific problems — not thousand-line code dumps. The agent knows what to build (spec), how (plan), and what to work on (task).
-
-**Crucial throughout**: your role is to verify, not just steer. At each phase, reflect and refine — does the spec capture what you actually want? Does the plan account for real-world constraints? Did the AI miss edge cases?
+**Key principle**: At each phase, the human *verifies and refines* — not just steers.
 
 ---
 
-## Tool Landscape (as of late 2025)
+## REASONS Canvas (SPDD)
 
-| Tool | Level | Approach | Notes |
-|---|---|---|---|
-| **Kiro** (AWS) | Spec-first | Lightweight; Requirements → Design → Tasks; VS Code-based | Verbose for small problems; no clear spec-anchored path |
-| **GitHub Spec Kit** | Spec-first (aspires to anchored) | CLI; constitution (memory bank) + slash commands; many files per spec | Most customizable; per-spec git branch suggests spec lifetime = change request |
-| **Tessl** | Spec-anchored → spec-as-source | CLI + MCP server; 1:1 spec-to-code-file mapping; `tessl build` generates code | Still in beta; deepest SDD ambition; non-determinism a real concern |
+Wei Zhang and Jessie Jie Xia (Thoughtworks) extend SDD via **Structured Prompt-Driven Development (SPDD)**, treating prompts as versioned, reviewable team assets. Their **REASONS Canvas**:
 
----
+| Component | Purpose |
+|---|---|
+| **R** — Requirements | What problem to solve; Definition of Done |
+| **E** — Entities | Domain entities and relationships |
+| **A** — Approach | Strategy for meeting requirements |
+| **S** — Structure | Where the change fits; components and dependencies |
+| **O** — Operations | Concrete, testable implementation steps |
+| **N** — Norms | Cross-cutting engineering standards (naming, observability) |
+| **S** — Safeguards | Non-negotiable boundaries (invariants, security rules) |
 
-## Critical View: The MDD Parallel
-
-Böckeler draws an important historical comparison: **model-driven development (MDD)** in the 1990s-2000s used formal models (UML, custom DSLs) as the source of truth, with custom code generators producing the implementation. MDD never took off for business applications — it created an awkward abstraction level with significant overhead and constraints.
-
-SDD with LLMs removes MDD's parseable-format constraint and eliminates custom code generators. But the trade-off: LLMs introduce non-determinism. The parseable structure of MDD provided tool support for validating spec completeness and consistency — something LLM-based specs lose.
-
-The risk: spec-as-source and spec-anchored may end up with the downsides of *both* MDD (inflexibility) and LLMs (non-determinism). Early evidence — agents ignoring constitution articles, duplicating code the spec described as existing — suggests this is a real concern.
-
-> "I wonder if some of them are trying to feed AI agents with our existing workflows too literally, ultimately amplifying existing challenges like review overload and hallucinations." — Birgitta Böckeler
+SPDD's key rule: **"When reality diverges, fix the prompt first — then update the code."**
 
 ---
 
-## When SDD Works Well
+## Tool Landscape
 
-1. **Greenfield** — Starting fresh; a small spec investment ensures the AI builds to intent, not to generic patterns
-2. **Feature work in existing codebases** — Spec forces clarity on how a new feature interacts with existing systems; plan encodes architectural constraints; new code feels native rather than bolted-on
-3. **Legacy modernization** — Original intent is captured in a modern spec; fresh architecture in the plan; AI rebuilds without carrying forward inherited technical debt
-
-**Where SDD struggles**: Small bugs and changes (workflow overkill); large, unclear features (requires specialist product/requirements skills and stakeholder involvement before speccing); any situation where iterating on code is faster than iterating on spec.
-
----
-
-## Practical Observations
-
-From practitioner accounts:
-- **Upfront planning pays dividends**: Most follow-up interactions become small tweaks rather than wholesale changes; mid-course correction frequency drops significantly
-- **Build stepwise**: Combine SDD with stacked PRs — small, independently reviewable chunks match the task-level granularity SDD produces
-- **Spec-once is the failure mode**: The discipline is in *continuously revisiting* the spec as the implementation evolves
-- **One workflow does not fit all sizes**: Current tools are better suited to medium-complexity features than to small bugs or large unclear initiatives
-- **Review fatigue**: Elaborate SDD tools generate many markdown files; some practitioners find it less taxing to review code than the spec artifacts
+| Tool | Level | Workflow |
+|---|---|---|
+| **Kiro** (AWS) | Spec-first | Requirements → Design → Tasks; per-task markdown docs |
+| **Spec Kit** (GitHub) | Spec-first / aspires spec-anchored | Constitution → Specify → Plan → Tasks |
+| **Tessl** | Spec-as-source | 1:1 spec-to-file mapping; bidirectional sync |
+| **SPDD / openspdd** | Spec-anchored | REASONS Canvas; versioned prompts; `/spdd-sync` |
 
 ---
 
-## Key Ideas
+## Spec vs. Memory Bank
 
-- SDD replaces "pattern-complete what I vaguely described" with "execute what I precisely specified" — agents need unambiguous instructions, not mind-reading
-- Three levels (spec-first / anchored / as-source) are meaningfully different; most tools only implement spec-first despite aspirations otherwise
-- The spec-once failure mode is the most common; discipline means revisiting the spec throughout
-- The MDD parallel is a sobering historical lens: spec-as-source is ambitious and carries real risks of inflexibility combined with LLM non-determinism
-- SDD is most powerful for feature work in existing codebases where intent must mesh with existing constraints
+A spec is distinct from the codebase-wide context files:
+
+- **Memory bank / AGENTS.md**: Persistent, always-relevant rules and conventions. Applies to every session.
+- **Spec**: Task-specific. Describes what to build *for this change*. May or may not persist after the task.
 
 ---
 
-## Open Questions
+## Key Debates
 
-- How should spec size/granularity vary with problem size? Current tools don't yet solve the "sledgehammer for a bug" problem
-- How does a spec-anchored workflow stay manageable as specs multiply across a large codebase?
-- Can inferential sensors (LLM evaluations) be used to verify spec completeness and consistency — recovering some of the tooling benefit MDD had?
-- Will spec-as-source face the same adoption ceiling as MDD, or does LLM flexibility change the calculus fundamentally?
+**Problem size mismatch**: Both Kiro and Spec Kit work well for medium features. For small bugs, the workflow is overhead. For large, unclear problems, more specialist product input is needed than SDD provides.
+
+**Review overload**: Spec Kit generates many markdown files. Böckeler: "I'd rather review code than all these markdown files." More documentation isn't automatically more control.
+
+**MDD parallel**: Spec-as-source echoes 1990s Model-Driven Development — specs that generated code. MDD failed for business applications due to abstraction overhead. Böckeler warns spec-as-source may combine "the downsides of both MDD and LLMs: inflexibility *and* non-determinism."
+
+**What works**: Spec-first consistently delivers on upfront clarity. Böckeler's observation: "Just because context windows are larger doesn't mean the AI properly picks up on everything in them."
+
+---
+
+## Related Pages
+
+- [[concepts/agentic-development-loop]] — the implementation layer; SDD provides the what, the loop provides the how
+- [[concepts/harness-engineering]] — quality harness complements SDD; feedforward guides and feedback sensors surround implementation
+- [[concepts/agentic-coding-risks]] — SDD directly addresses Zechner's critique of unconstrained agent autonomy
+- [[topics/ai-software-development]]
 
 ---
 
 ## Sources
 
-- [[summaries/spec-driven-development-spec-kit--summary]] — GitHub Spec Kit; four-phase workflow; "intent is the source of truth"; three use cases (Den Delimarsky, GitHub, 2025)
-- [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Three levels of SDD; Kiro/Spec Kit/Tessl comparison; MDD parallel; critical observations (Birgitta Böckeler, Thoughtworks, 2025)
-- [[summaries/using-sdd-with-claude-code--summary]] — Practitioner account; spec-once failure mode; upfront planning pays dividends; stepwise builds (Heeki Park, 2026)
-- [[summaries/building-elite-ai-engineering-culture--summary]] — SDD as one of key practices in elite AI engineering orgs; Thoughtworks calling it "one of the most important practices of 2025" (cjroth.com, 2026)
+- [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Böckeler/Thoughtworks; three levels; Kiro, Spec Kit, Tessl
+- [[summaries/spec-driven-development-spec-kit--summary]] — GitHub/Delimarsky; four-phase workflow
+- [[summaries/spdd-structured-prompt-summary]] — Zhang & Xia/Thoughtworks; REASONS Canvas
+- [[summaries/using-sdd-with-claude-code--summary]] — Heeki Park; practitioner experience

@@ -336,3 +336,42 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 - All five sources form a coherent argument: Haigh (what/why) → Spotify (origin/culture) → Ransom/von Grünberg (Day 2-50 prioritization) → Ross (guardrails vs gates) → Asay (AI extension). Reading them in order is a complete education on the topic.
 
 **Total wiki size after ingest**: 86 pages / 33 sources
+
+---
+
+## [2026-06-15] ingest | SPDD + SDV + MCP extensions + Platform Engineering (7 new sources)
+
+**Sources processed** (7 new; earlier session Apr 29 already ingested 7 related articles):
+1. "Structured-Prompt-Driven Development (SPDD)" — Wei Zhang & Jessie Jie Xia, Thoughtworks (clipped 2026-05-04)
+2. "Entering the Software-Defined Vehicle Era" — Egil Juliussen, EEtimes (clipped 2026-05-02)
+3. "Software-Defined Car Foundations for Future Vehicle Generations" — KIT / SofDCar consortium (clipped 2026-05-02)
+4. "MCP: An (Accidentally) Universal Plugin System" — Scott Werner, worksonmymachine.ai (clipped 2026-04-10)
+5. "I Still Prefer MCP Over Skills" — David, david.coffee (clipped 2026-04-10)
+6. "Design a Developer Self-Service Foundation" — juliakm, Microsoft Learn (clipped 2026-06-15)
+7. "Build the Platform Engineering Team" — juliakm, Microsoft Learn (clipped 2026-06-15)
+
+**Pages created** (9):
+- `wiki/concepts/software-defined-vehicle` — SDV definition; 8 complexity factors; domain ECU transition; OTA; functional safety; OEM software economics; SofDCar
+- `wiki/topics/software-defined-vehicle` — New topic area; aggregates SDV entities, concepts, sources
+- `wiki/summaries/spdd-structured-prompt-summary` — REASONS Canvas; prompts as first-class team artifacts; fix-prompt-first rule
+- `wiki/summaries/sdv-era-juliussen-summary` — 8 SDV complexity factors; domain ECU transition; OEM platform strategy
+- `wiki/summaries/sofdcar-kit-summary` — SofDCar consortium; digital twin; IT reference architecture; security methodology
+- `wiki/summaries/mcp-universal-plugin-summary` — USB-C analogy; accidental universal plugin ecosystem; protocol evolution
+- `wiki/summaries/mcp-vs-skills-summary` — Connectors vs Manuals taxonomy; MCP advantages; ideal MCP+Skill combination
+- `wiki/summaries/idp-self-service-foundation-summary` — Five IDP components (API/graph/orchestrator/providers/metadata); automation-first; provider model
+- `wiki/summaries/platform-engineering-team-summary` — Reactive vs proactive culture; maturity model; talent gap; Team Topologies
+
+**Pages updated** (4):
+- `wiki/concepts/spec-driven-development` — Added SPDD / REASONS Canvas section; source count 3→4
+- `wiki/concepts/model-context-protocol` — Added USB-C analogy, accidental network effect, MCP vs Skills taxonomy; source count 2→3
+- `wiki/concepts/harness-engineering` — References corrected to existing summary filenames
+- `wiki/index.md` — 102 pages / 48 sources; new SDV topic + concept; 8 new summaries listed
+
+**Key insights**:
+- SPDD (Structured Prompt-Driven Development) extends SDD by treating prompts as versioned, team-level assets with a formal REASONS Canvas structure. The key rule — "fix the prompt first, then the code" — prevents the common drift between specs and implementation
+- The SDV (Software-Defined Vehicle) domain is a major new topic area with unique complexity: 100M+ LOC per vehicle, 10–15 year support lifecycle, real-time safety requirements, and regulatory mandates (UNECE WP.29). The SofDCar project (Bosch + KIT consortium) is the most concrete European research initiative
+- MCP's "accidental universality" (Werner's USB-C analogy) is a key architectural insight: MCP was designed for AI context but is becoming a general plugin protocol. The connectors-vs-manuals taxonomy (David's framing) is the clearest mental model for when to use MCP vs Skills
+- The Microsoft platform engineering documentation adds the provider/inner-sourcing dimension missing from Humanitec-centric sources: the pluggable provider model is the key to scaling IDP contribution across large organizations without centralizing all maintenance
+- Session detected that Apr 29 session had already ingested 8 related articles (Böckeler, GitHub Spec Kit, Heeki Park, Kief Morris, Fowler harness, Doernenburg, Roth elite culture, Stainless MCP); removed 8 duplicate summaries created before discovering this
+
+**Total wiki size after ingest**: 102 pages / 48 sources

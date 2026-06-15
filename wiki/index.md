@@ -1,14 +1,15 @@
 	# Wiki Index
 
-**Updated**: 2026-04-29 | **Total Pages**: 93 | **Total Sources**: 41
+**Updated**: 2026-06-15 | **Total Pages**: 102 | **Total Sources**: 48
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
 ---
 
-## Topics (7)
+## Topics (8)
 
-- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load, Day 2–50 prioritization, AI velocity gap | Sources: 8
+- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load, Day 2–50 prioritization, AI velocity gap | Sources: 10
+- [[topics/software-defined-vehicle]] — OTA updates, ECU consolidation, functional safety, digital twin, OEM software economics | Sources: 2
 - [[topics/ai-software-development]] — AI coding agents, developer transformation, local LLMs, Europe AI dependency, agentic workflow loops | Sources: 5
 - [[topics/personal-knowledge-management]] — Obsidian, LLM Wiki pattern, PARA, Johnny.Decimal, markdown vs. databases debate | Sources: 6
 - [[topics/leadership-management]] — Functional organization, experts leading experts, difficult employees, conversations | Sources: 4
@@ -36,7 +37,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Concepts (29)
+## Concepts (30)
 
 - [[concepts/agentic-coding-risks]] — Compounding errors, low recall, merchants of complexity; the case for discipline | Sources: 1
 - [[concepts/agentic-development-loop]] — Friction-removal loop; Theory of Constraints in dev workflow; identity shift to agent manager; 5 parallel worktrees | Sources: 1
@@ -60,19 +61,27 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[concepts/johnny-decimal]] — Static numeric file hierarchy; optimizes for searchability; "10.23 = Taxes 2023" | Sources: 1
 - [[concepts/kubernetes]] — Container orchestration; practical design decisions (ingress, tenancy, logging, host OS); cloud-native ecosystem | Sources: 8
 - [[concepts/llm-wiki-pattern]] — Karpathy's pattern: LLM incrementally builds and maintains a persistent wiki | Sources: 2
-- [[concepts/model-context-protocol]] — Open standard for AI tool/resource interoperability; governance surface; why MCP succeeded where predecessors failed; four-good-enoughs | Sources: 3
+- [[concepts/model-context-protocol]] — Open standard for AI tool/resource interoperability; USB-C analogy; accidental network effect; MCP vs Skills (connectors vs manuals) | Sources: 3
 - [[concepts/marathon-interval-training]] — Backwards-planned intervals: 10RT → HMRT → MRT across training block | Sources: 2
 - [[concepts/para-method]] — Projects/Areas/Resources/Archive; Tiago Forte; optimizes for discoverability | Sources: 1
 - [[concepts/platform-engineering-maturity-model]] — CNCF framework; five aspects (investment, adoption, interfaces, operations, measurement); four stages | Sources: 1
 - [[concepts/plain-text-first]] — Choosing Markdown for future-proofing; proved ideal for AI-augmented workflows | Sources: 2
-- [[concepts/spec-driven-development]] — Specs as source of truth; three levels (spec-first/anchored/as-source); four-phase workflow; MDD parallel; spec-once failure mode | Sources: 4
+- [[concepts/software-defined-vehicle]] — Vehicle architecture where functionality is defined by software; OTA, ECU consolidation, functional safety, SofDCar project | Sources: 2
+- [[concepts/spec-driven-development]] — Specs as source of truth; three levels (spec-first/anchored/as-source); four-phase workflow; REASONS Canvas (SPDD); MDD parallel | Sources: 4
 - [[concepts/sre-anything-framework]] — SRE reliability hierarchy generalized to any domain; SRE as discipline: reliability vs. velocity, toil reduction, blameless culture | Sources: 2
 
 ---
 
-## Summaries (42)
+## Summaries (49)
 
 - [[summaries/assessing-internal-quality-with-agent--summary]] — Doernenburg/Thoughtworks; Swift CCMenu case study; type system degradation; working code ≠ quality code
+- [[summaries/idp-self-service-foundation-summary]] — Microsoft; five foundational IDP components; automation-first; provider model for inner-sourcing
+- [[summaries/mcp-universal-plugin-summary]] — Scott Werner; USB-C analogy; accidental universal plugin ecosystem; protocol evolution pattern
+- [[summaries/mcp-vs-skills-summary]] — David (david.coffee); MCP as connector vs Skills as manual; zero-install remote; ideal combination pattern
+- [[summaries/platform-engineering-team-summary]] — Microsoft; reactive vs proactive culture; maturity model; talent gap; team structure
+- [[summaries/sdv-era-juliussen-summary]] — Juliussen/EEtimes; 8 SDV complexity factors; domain ECU transition; OEM software platform strategy
+- [[summaries/sofdcar-kit-summary]] — KIT/SofDCar consortium; digital twin across vehicle lifecycle; IT reference architecture; security methodology
+- [[summaries/spdd-structured-prompt-summary]] — Zhang & Xia/Thoughtworks; REASONS Canvas; prompts as versioned team artifacts; fix prompt first rule
 - [[summaries/building-elite-ai-engineering-culture--summary]] — cjroth; Taste×Discipline×Leverage formula; exemplar companies; stacked PRs; AGENTS.md; design engineering
 - [[summaries/dark-side-of-self-service--summary]] — Humanitec; developer self-service anti-patterns; cognitive load model
 - [[summaries/frugal-architecture-summary]] — AWS blog; 7 Frugal Architect laws; Well-Architected Framework mapping; cost as design discipline
@@ -170,6 +179,13 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 40. Spec-driven development with AI: Get started with a new open source toolkit — Den Delimarsky, GitHub (2025-09-02, clipped 2026-04-29)
 41. Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl — Birgitta Böckeler, Thoughtworks (2025-10-15, clipped 2026-04-29)
 42. Using spec-driven development with Claude Code — Heeki Park (2026-03-01, clipped 2026-04-29)
+43. Structured-Prompt-Driven Development (SPDD) — Wei Zhang & Jessie Jie Xia, Thoughtworks (2026-04-28, clipped 2026-05-04)
+44. Entering the Software-Defined Vehicle Era — Egil Juliussen, EEtimes (2022-03-21, clipped 2026-05-02)
+45. Software-Defined Car Foundations for Future Vehicle Generations — KIT / SofDCar consortium (2021, clipped 2026-05-02)
+46. MCP: An (Accidentally) Universal Plugin System — Scott Werner, worksonmymachine.ai (2025-06-28, clipped 2026-04-10)
+47. I Still Prefer MCP Over Skills — David, david.coffee (2026-04-02, clipped 2026-04-10)
+48. Design a Developer Self-Service Foundation — juliakm, Microsoft Learn (2026-06-15, clipped 2026-06-15)
+49. Build the Platform Engineering Team — juliakm, Microsoft Learn (2026-06-15, clipped 2026-06-15)
 
 *(Sources 2 and 4 in inbox — German IT emigration and property vs. ETF articles — intentionally not ingested; outside current wiki scope)*
 
@@ -184,6 +200,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 
 ## Recent Changes
 
+- **2026-06-15**: Ingest of 7 new sources — 1 new SDV concept, 1 new SDV topic, 7 new summaries; SPDD added to SDD concept; MCP vs Skills + USB-C analogy added to MCP concept; total now 102 pages / 48 sources
 - **2026-04-29**: Batch ingest of 7 articles — 2 new concepts (harness-engineering, spec-driven-development), 7 new summaries; major updates to topics/ai-software-development and concepts/agentic-coding-risks; 2 German personal articles intentionally skipped; total now 93 pages / 41 sources
 - **2026-04-23**: Ingest of MCP article (Stainless) — 1 new summary; major update to concepts/model-context-protocol (historical predecessors, four-good-enoughs, adoption flywheel); total now 84 pages / 35 sources
 - **2026-04-23**: P1 health check fixes — promoted 6 Gen 1 orphan pages to Gen 2 schema (kubernetes, model-context-protocol, platform-engineering-maturity-model, agentic-infrastructure, governance-by-default, cncf); merged 4 Gen 1 duplicates/overlaps into Gen 2 equivalents; deleted 4 Gen 1 pages; total now 83 pages

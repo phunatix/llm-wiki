@@ -2,121 +2,139 @@
 title: Model Context Protocol (MCP)
 type: concept
 source_count: 3
-created: 2026-04-10
-last_updated: 2026-04-23
-tags: [mcp, ai-agents, protocols, governance, interoperability]
-inbound_links: 0
+created: 2026-06-15
+last_updated: 2026-06-15
+tags:
+  - concept
+  - ai-tooling
+  - protocols
+  - mcp
+related_pages:
+  - topics/ai-software-development
+  - concepts/agentic-development-loop
 status: complete
-related_pages: ["[[concepts/agentic-infrastructure]]", "[[concepts/governance-by-default]]", "[[concepts/agentic-development-loop]]", "[[topics/ai-software-development]]", "[[topics/platform-engineering]]"]
 ---
 
 # Model Context Protocol (MCP)
 
-**Domain**: AI Agent Infrastructure / Interoperability
+**Domain**: AI Tooling / Protocols / Agent Infrastructure
 
-**One-line definition**: An emerging open standard that lets AI applications discover and use external tools, resources, and services through a uniform server interface — reducing bespoke integrations while introducing a new governance surface for permissions, isolation, and observability.
+**One-line definition**: An open, vendor-neutral protocol that standardizes how AI agents connect to external tools and data sources — the "USB-C for AI" that enables any tool to work with any LLM client without custom wiring.
 
 ---
 
-## What MCP Is
+## Definition
 
-The Model Context Protocol defines a standard way for AI clients (models, agents, applications) to connect to MCP servers that expose tools, resources, and prompts. Instead of every AI application building one-off integrations with each external system, MCP creates a common interface: the client discovers what servers are available, what tools they expose, and calls them in a standardized way.
+Model Context Protocol (MCP) is an open standard (released by Anthropic, November 2024; exploded in adoption February 2025) that provides a shared interface for connecting LLM agents to tools, services, and data sources. Instead of each LLM provider requiring custom integration per tool, and each tool requiring separate connectors per LLM, MCP defines one protocol that any client and any server can speak.
 
-The practical effect: an AI agent can access a filesystem, a database, a web browser, an API, or a custom internal tool through the same protocol — without custom integration code for each target.
+**Core idea**: An MCP server exposes tools with well-defined schemas. Any MCP client (Claude, ChatGPT, Cursor, Zed, etc.) can discover and call those tools without knowing anything about the underlying service implementation.
 
 ---
 
 ## Why MCP Succeeded Where Others Failed
 
-MCP is not the first attempt to connect AI models to external tools. What distinguishes it is that it arrived when each prerequisite was *just good enough* — all at the same time. (Stainless, 2025)
+Previous attempts at LLM tool integration all had structural flaws:
 
-**Previous attempts and why they fell short:**
-
-| Approach | Problem |
+| Predecessor | Problem |
 |---|---|
-| Function/tool calling | Had to manually wire each function per request; retry logic on the developer |
-| ReAct / LangChain | Model emitted `Action:` strings; parsing was flaky and hard to debug |
-| ChatGPT plugins | Gated — required hosting an OpenAPI server and OpenAI approval |
-| Custom GPTs | Lower barrier but still trapped inside OpenAI's runtime |
-| AutoGPT / BabyAGI | Ambitious but a mess of configuration, loops, and error cascades |
+| Function/tool calling | Manual per-request wiring; each provider had slightly different schemas |
+| ReAct / LangChain | Model emits `Action:` strings; parse them yourself — fragile, hard to debug |
+| ChatGPT plugins | Gated; required hosting an OpenAPI server + Anthropic approval |
+| Custom GPTs | Locked inside OpenAI's runtime |
+| AutoGPT / BabyAGI | Configuration mess; error cascades |
 
-**The four "good enoughs" that made MCP stick:**
+Stainless (2025) identifies four reasons MCP succeeded where these didn't:
 
-1. **Models good enough** — Earlier tool use required extensive error handling because models weren't reliable enough. Newer models cross the threshold where they can recover from mistakes without entering unrecoverable "context poisoning" spirals. MCP showed up right when this threshold was crossed.
+1. **Models finally good enough**: Tool use in agentic settings requires robust error handling. Early models got sucked into error spirals ("context poisoning"). Newer models recover from mistakes. Once models cross the reliability threshold, tool integration overhead drops dramatically. "MCP just showed up right on time."
 
-2. **Protocol good enough** — Previous tool interfaces were stack-specific (OpenAI's function calling only worked in their API; LangChain tools were tightly bound to their loop). MCP is vendor-neutral: define a tool once, it's accessible to any MCP client. The key design principle: *"designing at the right altitude"* — the protocol exposes the right level of detail, creating a clean boundary between tool developers and agent developers. When an API is designed at the right altitude, it doesn't go away.
+2. **Protocol is good enough**: Vendor-neutral. Define a tool once; it's accessible to any MCP-capable client. Clear separation between tool developer and agent developer — each can focus on their side. Designed "at the right altitude" — exposing the right amount of detail.
 
-3. **Tooling good enough** — High-quality SDKs in many languages; decorator-based tool definition in Python means a few lines of code exposes a function as an MCP tool; developers can get started fast and see impact immediately. Developer ergonomics matter: the difference between widespread adoption and dying in obscurity is often just friction reduction.
+3. **Tooling is good enough**: Simple, high-quality SDKs in many languages. A Python MCP server is a decorated function + a runtime. Low friction to build, share, and reuse.
 
-4. **Momentum good enough** — OpenAI adopted MCP in their agents SDK; Google Deepmind backed it; all major LLM providers are now onboard. On the server side, API-first companies raced to expose their services as MCP tools. Registries (smithery.ai, Postman, glama.ai), tutorials, courses, and events followed.
-
-**The adoption flywheel:**
-> Momentum → more tools built → agents more powerful → more adoption → models trained on MCP usage patterns → even better at agentic tasks → repeat
-
-**An underappreciated timing detail**: The MCP spec was released by Anthropic in November 2024 but didn't go viral until February 2025 — three months later. The spec was ready before the ecosystem was. Anthropic's sustained investment in documentation, talks, and direct company partnerships bridged that gap.
+4. **Momentum is good enough**: OpenAI and Google adopted MCP. All major model providers are onboard. Rich ecosystem: registries (smithery.ai, glama.ai), services (Cloudflare, Vercel), courses (HuggingFace). As MCP becomes ubiquitous, models will be trained on MCP usage patterns, compounding capability.
 
 ---
 
-## Why Governance, Not Just Convenience
+## The Accidental Network Effect
 
-The surface appeal of MCP is reducing integration effort. The real operational story is governance.
+Scott Werner's "USB-C analogy" captures the emergent property:
 
-As MCP adoption grows inside organizations, the registry of available tools becomes an attack surface, a trust problem, and an observability challenge:
+> "Every MCP server built for Claude or ChatGPT becomes a free plugin for *anything* that speaks MCP."
 
-- **Permissions**: Which tools can which agents invoke? With what scope?
-- **Isolation**: Can a tool invocation by one agent affect another agent's context or state?
-- **Provenance**: Who published this MCP server? Is it audited? Is the version pinned?
-- **Observability**: Can you trace which agent called which tool, with what arguments, and what it returned?
+Protocol evolution pattern:
+- HTTP was for academic papers → now runs civilization
+- Bluetooth was for hands-free calling → now unlocks your front door
+- USB was for keyboards → now charges everything
 
-Treating MCP as just plumbing misses the point. The organizations that get this right will treat MCP servers as governed platform capabilities, not ad hoc scripts.
-
----
-
-## Registries as Control Plane
-
-One response to the governance challenge: **MCP registries**. A registry provides:
-- A catalog of approved MCP servers (versioned, audited, with known publishers)
-- Policy controls for tool access (RBAC or attribute-based)
-- Runtime visibility into tool invocations
-
-Projects like AgentRegistry OSS represent an early attempt to build this infrastructure. The pattern mirrors what happened with container registries: once Docker made containers easy to create and share, the ecosystem immediately needed Dockerhub, then private registries with scanning and policy. MCP is following a similar arc. (See [[sources/managing-mcp-servers-and-tools-with-agentregistry-oss]])
+MCP was designed to give AI agents context. But because it's a generic "standardized way to connect things to data sources and tools," it's accidentally creating a **universal plugin ecosystem** — not just for AI.
 
 ---
 
-## Standards Context
+## MCP vs. Skills: Connectors vs. Manuals
 
-The Model Context Protocol emerged from Anthropic and has attracted backing from Google, the Linux Foundation, and others — making it a credible candidate for a de facto standard rather than a vendor-proprietary integration layer. The governance of the standard itself (who controls the spec, how extensions are proposed) matters for enterprise adoption decisions. (See [[sources/linux-foundation-google-anthropic-wer-den-standard-fuer-ki-agenten-setzt]])
+David (david.coffee, 2026) makes the clearest distinction:
+
+**Use MCP when**: Giving an LLM an interface to *connect to something* — a website, a service, an application. MCP handles auth, sandboxing, updates, portability.
+
+**Use Skills when**: Pure knowledge and context — teaching the LLM *how* to use tools it already has, standardizing workflows, capturing domain jargon.
+
+**MCP advantages over Skills-with-CLI**:
+- **Zero-install remote usage**: Point client at MCP URL, done
+- **Seamless updates**: New tools instantly available to all clients
+- **OAuth auth**: No raw tokens in plain text
+- **True portability**: Works from any device, any client
+- **Sandboxing**: Controlled interface, not raw execution power
+- **Smart discovery**: Tools loaded on-demand, not pre-loaded into context
+
+**Problems with Skills requiring CLI**:
+- CLI must be installed — fails in non-terminal clients (ChatGPT, Perplexity web)
+- Secret management nightmare (where do API tokens live?)
+- Fragmented ecosystems and incompatible formats
+- Context bloat: entire SKILL.md loaded even if only one tool is needed
+
+**The ideal pattern**: MCP as connector + a companion Skill as the knowledge layer — the Skill captures gotchas, edge cases, and best practices discovered during use. The MCP handles the actual connection.
 
 ---
 
-## Key Ideas
+## Practical Architecture
 
-- MCP reduces integration burden: one protocol instead of N custom connectors
-- The real value is as a governance surface — permissions, isolation, provenance, observability all become tractable
-- As agent autonomy increases, MCP registries become as critical as container registries or API gateways
-- Organizational MCP adoption without governance is shadow IT by another name
-- MCP succeeded because it was *good enough* across four dimensions simultaneously — timing matters as much as design quality
-- "Designing at the right altitude": the right abstraction boundary lets tool developers focus on tools and agent developers focus on agents; a protocol designed at the right altitude doesn't go away
+A minimal MCP server (Python):
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP("MyService")
+
+@mcp.tool()
+def get_data(query: str) -> str:
+    """Fetch data for a given query."""
+    ...
+```
+
+Start it: `mcp dev path.to.your.module`
+
+That's it — the tools are now available to any MCP client.
 
 ---
 
-## Connection to Platform Engineering
+## Current Limitations
 
-From a platform engineering perspective, MCP servers are a new category of platform capability to expose, govern, and maintain. [[concepts/agentic-infrastructure]] describes the broader shift of AI agents becoming first-class platform actors; MCP is the protocol layer that makes this possible at scale. [[concepts/governance-by-default]] is the design pattern that should govern how MCP tools are exposed.
+- Compatibility between MCP clients varies (different JSON Schema dialects, feature sets)
+- Auth standardization is still maturing
+- Performance degrades with many tools loaded (context window pressure)
+- The line between when to use a local vs. remote MCP server is still being worked out in practice
 
 ---
 
-## Open Questions
+## Related Pages
 
-- Which operational controls are most important to implement first: RBAC, budget caps, audit logging, or environment isolation?
-- Will MCP standardize enough to become commodity, or will vendor-specific extensions fragment the ecosystem?
-- How does MCP interact with existing API gateway and service mesh infrastructure?
-- SDK code mode (where agents write and execute integration code using idiomatic SDKs) may outperform direct tool use for complex API tasks — how does this change the architecture of MCP-based agents?
+- [[topics/ai-software-development]] — MCP is infrastructure for the agentic development ecosystem
+- [[concepts/agentic-development-loop]] — MCP servers are part of the infrastructure Kakkar refers to
 
 ---
 
 ## Sources
 
-- [[sources/linux-foundation-google-anthropic-wer-den-standard-fuer-ki-agenten-setzt]] — Strategic context; Linux Foundation + Google + Anthropic backing; governance of the standard
-- [[sources/managing-mcp-servers-and-tools-with-agentregistry-oss]] — Registry-oriented governance; AgentRegistry OSS; tool access controls
-- [[summaries/mcp-is-eating-the-world--summary]] — Historical predecessors; four-good-enoughs framework; adoption flywheel; "designing at the right altitude" (Stainless, 2025)
+- [[summaries/mcp-is-eating-the-world--summary]] — Stainless; four reasons MCP succeeded; momentum and ecosystem
+- [[summaries/mcp-universal-plugin-summary]] — Scott Werner; USB-C analogy; accidental network effect
+- [[summaries/mcp-vs-skills-summary]] — David (david.coffee); connectors vs manuals; MCP advantages; ideal combination pattern
