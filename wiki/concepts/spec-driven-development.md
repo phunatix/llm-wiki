@@ -1,13 +1,13 @@
 ---
 title: Spec-Driven Development (SDD)
 type: concept
-source_count: 4
+source_count: 5
 created: 2026-04-29
-last_updated: 2026-04-29
+last_updated: 2026-06-22
 tags: [ai-agents, coding-agents, specifications, developer-workflow, software-engineering]
 inbound_links: 0
 status: complete
-related_pages: ["[[concepts/harness-engineering]]", "[[concepts/agentic-coding-risks]]", "[[concepts/agentic-development-loop]]", "[[topics/ai-software-development]]"]
+related_pages: ["[[concepts/harness-engineering]]", "[[concepts/agentic-coding-risks]]", "[[concepts/agentic-development-loop]]", "[[concepts/structured-prompt-driven-development]]", "[[topics/ai-software-development]]"]
 ---
 
 # Spec-Driven Development (SDD)
@@ -74,13 +74,14 @@ A spec is closer to a Product Requirements Document (PRD) than to a technical de
 
 ---
 
-## Tool Landscape (as of late 2025)
+## Tool Landscape (as of mid-2026)
 
 | Tool | Level | Approach | Notes |
 |---|---|---|---|
 | **Kiro** (AWS) | Spec-first | Lightweight; Requirements → Design → Tasks; VS Code-based | Verbose for small problems; no clear spec-anchored path |
 | **GitHub Spec Kit** | Spec-first (aspires to anchored) | CLI; constitution (memory bank) + slash commands; many files per spec | Most customizable; per-spec git branch suggests spec lifetime = change request |
 | **Tessl** | Spec-anchored → spec-as-source | CLI + MCP server; 1:1 spec-to-code-file mapping; `tessl build` generates code | Still in beta; deepest SDD ambition; non-determinism a real concern |
+| **SPDD / openspdd** (Thoughtworks) | Spec-anchored | REASONS Canvas + CLI; prompt↔code sync loop; governed team assets | Most detailed spec-anchored implementation; solves spec-once by design; see [[concepts/structured-prompt-driven-development]] |
 
 ---
 
@@ -142,3 +143,4 @@ From practitioner accounts:
 - [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Three levels of SDD; Kiro/Spec Kit/Tessl comparison; MDD parallel; critical observations (Birgitta Böckeler, Thoughtworks, 2025)
 - [[summaries/using-sdd-with-claude-code--summary]] — Practitioner account; spec-once failure mode; upfront planning pays dividends; stepwise builds (Heeki Park, 2026)
 - [[summaries/building-elite-ai-engineering-culture--summary]] — SDD as one of key practices in elite AI engineering orgs; Thoughtworks calling it "one of the most important practices of 2025" (cjroth.com, 2026)
+- [[summaries/structured-prompt-driven-development--summary]] — SPDD: REASONS Canvas; prompts as versioned team assets; closed-loop prompt↔code sync; openspdd CLI (Wei Zhang & Jessie Jie Xia, Thoughtworks, 2026)

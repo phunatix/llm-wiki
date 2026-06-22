@@ -1,9 +1,9 @@
 ---
 title: AI & Software Development
 type: topic
-source_count: 12
+source_count: 15
 created: 2026-04-13
-last_updated: 2026-04-29
+last_updated: 2026-06-22
 tags: [ai, coding-agents, developer-tools, llm, developer-productivity]
 inbound_links: 0
 status: complete
@@ -25,6 +25,8 @@ related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/agentic-coding-r
 - The evolving developer identity and skills
 - Harness engineering — regulating agents through guides and sensors
 - Spec-driven development — structured specifications as the source of truth
+- Structured-Prompt-Driven Development (SPDD) — prompts as versioned, governed team assets
+- MCP vs Skills architecture debate — connectors vs. manuals for agent capabilities
 - Design engineering — dissolving the design/engineering boundary
 - Elite AI engineering organizational practices
 - AI's impact on developer education
@@ -38,6 +40,7 @@ related_pages: ["[[concepts/ai-developer-stages]]", "[[concepts/agentic-coding-r
 - [[concepts/agentic-development-loop]]: The friction-removal loop; Theory of Constraints applied to dev workflow; implementer → agent manager identity shift
 - [[concepts/harness-engineering]]: Feedforward guides + feedback sensors that make agents self-regulate; humans on the loop; the agentic flywheel
 - [[concepts/spec-driven-development]]: Structured specs as source of truth; three levels (spec-first/anchored/as-source); four-phase workflow
+- [[concepts/structured-prompt-driven-development]]: SPDD — prompts as first-class versioned delivery artifacts; REASONS Canvas; closed-loop prompt↔code sync
 
 ## Key Entities
 
@@ -87,6 +90,8 @@ Speed:                      LOW  ───────────────�
 
 ## Recent Developments
 
+- **2026-04**: SPDD published (Zhang/Xia, Thoughtworks/martinfowler.com) — most detailed spec-anchored implementation; REASONS Canvas; openspdd CLI; prompts as governed team assets; ~99% intent alignment demonstrated
+- **2026-04**: MCP vs Skills debate crystallizes — david.coffee argues MCP for connectors, Skills for knowledge/manuals; best pattern is Skill as knowledge layer on top of MCP
 - **2026-04**: Harness engineering named as emerging practice; Thoughtworks identifies three dimensions (maintainability, architecture fitness, behavior); computational vs inferential sensors as key distinction
 - **2026-02**: "Building Elite AI Engineering Culture" synthesis — AI teams 5× efficiency gap over traditional SaaS ($3.48M vs $610K revenue/employee); Taste × Discipline × Leverage formula; stacked PRs becoming standard practice
 - **2026-01**: Internal code quality from agents documented as systemic problem — working code that degrades type semantics, introduces unnecessary complexity, misses existing utilities
@@ -115,5 +120,8 @@ Speed:                      LOW  ───────────────�
 - [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]]: Critical SDD analysis; three levels; MDD parallel; tool comparison
 - [[summaries/assessing-internal-quality-with-agent--summary]]: Internal quality degradation case study in Swift
 - [[summaries/productive-with-claude-code-summary]]: Practitioner account; Theory of Constraints + friction-removal loop; 6 weeks at Tano
+- [[summaries/structured-prompt-driven-development--summary]]: SPDD method; REASONS Canvas; billing engine example; three core skills (Thoughtworks, 2026)
+- [[summaries/mcp-over-skills--summary]]: MCP vs Skills debate; connector/manual taxonomy; knowledge layer pattern (david.coffee, 2026)
+- [[summaries/mcp-universal-plugin-system--summary]]: MCP as universal plugin system; USB-C analogy; accidental network effect (Scott Werner, 2025)
 - [[summaries/self-hosted-ai-coding--summary]]: Practical guide to self-hosted AI coding stack
 - [[summaries/us-cuts-off-tech-to-europe--summary]]: Geopolitical context for AI tool dependency
