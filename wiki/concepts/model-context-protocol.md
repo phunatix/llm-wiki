@@ -1,17 +1,11 @@
 ---
 title: Model Context Protocol (MCP)
 type: concept
-source_count: 3
-created: 2026-06-15
-last_updated: 2026-06-15
-tags:
-  - concept
-  - ai-tooling
-  - protocols
-  - mcp
-related_pages:
-  - topics/ai-software-development
-  - concepts/agentic-development-loop
+source_count: 5
+created: 2026-04-10
+last_updated: 2026-06-22
+tags: [mcp, ai-agents, protocols, governance, interoperability]
+inbound_links: 0
 status: complete
 ---
 
@@ -128,13 +122,55 @@ That's it — the tools are now available to any MCP client.
 
 ## Related Pages
 
-- [[topics/ai-software-development]] — MCP is infrastructure for the agentic development ecosystem
-- [[concepts/agentic-development-loop]] — MCP servers are part of the infrastructure Kakkar refers to
+From a platform engineering perspective, MCP servers are a new category of platform capability to expose, govern, and maintain. [[concepts/agentic-infrastructure]] describes the broader shift of AI agents becoming first-class platform actors; MCP is the protocol layer that makes this possible at scale. [[concepts/governance-by-default]] is the design pattern that should govern how MCP tools are exposed.
+
+---
+
+## MCP as Universal Plugin System
+
+Beyond AI, MCP is accidentally becoming a **universal plugin system** — analogous to how USB-C transcended its original purpose. (Werner, 2025)
+
+The insight: every MCP server built for AI becomes a free plugin for *any* application that speaks the protocol. A Spotify MCP built for Claude is instantly usable by a workout app, a task manager, or anything else — without the MCP developer knowing those apps exist.
+
+**Protocol evolution precedent**: HTTP (academic papers → civilization), Bluetooth (hands-free → smart locks), USB (keyboards → power delivery). Great protocols always transcend their creators' intent. MCP isn't saying "I'm for AI" — it's saying "I'm a well-designed hole for functionality."
+
+This creates an **accidental network effect**: more AI-driven MCP servers → more capabilities available to all apps → more incentive to speak MCP → more servers built. The flywheel accelerates regardless of whether participants are building for AI specifically.
+
+---
+
+## MCP vs. Skills: The Architecture Debate
+
+A growing narrative claims "MCP is dead; Skills are the new standard." Practitioners push back with a clear taxonomy (david.coffee, 2026):
+
+- **MCP = Connectors**: The standard for giving LLMs (or any app) an interface to services. The service dictates the interface. Advantages: zero-install remote usage, seamless updates, OAuth-based auth, natural sandboxing, smart discovery.
+
+- **Skills = Manuals**: Pure knowledge that teaches LLMs *how to use* existing tools. Best for: standardizing workflows, capturing gotchas, teaching CLI usage patterns, encoding business jargon.
+
+**Skills that require CLI installation are problematic**:
+- Deployment friction (binaries, NPM, uv)
+- Secret management nightmare (plain-text tokens in .env)
+- Fragmented ecosystem (different clients support different formats)
+- Context bloat (entire SKILL.md loaded vs. single tool signature)
+
+**The ideal pattern**: A Skill as a **knowledge layer on top of an MCP connector** — the MCP handles connection and tool execution; the Skill captures non-obvious patterns, format quirks, and best practices discovered through use.
+
+---
+
+## Open Questions
+
+- Which operational controls are most important to implement first: RBAC, budget caps, audit logging, or environment isolation?
+- Will MCP standardize enough to become commodity, or will vendor-specific extensions fragment the ecosystem?
+- How does MCP interact with existing API gateway and service mesh infrastructure?
+- SDK code mode (where agents write and execute integration code using idiomatic SDKs) may outperform direct tool use for complex API tasks — how does this change the architecture of MCP-based agents?
+- Will MCP's universal plugin potential be realized beyond AI, or will it remain primarily an AI-agent protocol?
+- How does the Skill-as-knowledge-layer pattern scale in large organizations with hundreds of MCP servers?
 
 ---
 
 ## Sources
 
-- [[summaries/mcp-is-eating-the-world--summary]] — Stainless; four reasons MCP succeeded; momentum and ecosystem
-- [[summaries/mcp-universal-plugin-summary]] — Scott Werner; USB-C analogy; accidental network effect
-- [[summaries/mcp-vs-skills-summary]] — David (david.coffee); connectors vs manuals; MCP advantages; ideal combination pattern
+- [[sources/linux-foundation-google-anthropic-wer-den-standard-fuer-ki-agenten-setzt]] — Strategic context; Linux Foundation + Google + Anthropic backing; governance of the standard
+- [[sources/managing-mcp-servers-and-tools-with-agentregistry-oss]] — Registry-oriented governance; AgentRegistry OSS; tool access controls
+- [[summaries/mcp-is-eating-the-world--summary]] — Historical predecessors; four-good-enoughs framework; adoption flywheel; "designing at the right altitude" (Stainless, 2025)
+- [[summaries/mcp-universal-plugin-system--summary]] — USB-C analogy; accidental network effect; protocol evolution precedents; MCP as possibility space beyond AI (Scott Werner, 2025)
+- [[summaries/mcp-over-skills--summary]] — MCP vs Skills debate; connector/manual taxonomy; CLI-skill friction; knowledge layer pattern (david.coffee, 2026)

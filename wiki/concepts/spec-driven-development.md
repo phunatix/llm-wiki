@@ -1,20 +1,13 @@
 ---
 title: Spec-Driven Development
 type: concept
-source_count: 4
-created: 2026-06-15
-last_updated: 2026-06-15
-tags:
-  - concept
-  - ai-software-development
-  - methodology
-  - coding-agents
-related_pages:
-  - concepts/agentic-development-loop
-  - concepts/harness-engineering
-  - concepts/agentic-coding-risks
-  - topics/ai-software-development
+source_count: 5
+created: 2026-04-29
+last_updated: 2026-06-22
+tags: [ai-agents, coding-agents, specifications, developer-workflow, software-engineering]
+inbound_links: 0
 status: complete
+related_pages: ["[[concepts/harness-engineering]]", "[[concepts/agentic-coding-risks]]", "[[concepts/agentic-development-loop]]", "[[concepts/structured-prompt-driven-development]]", "[[topics/ai-software-development]]"]
 ---
 
 # Spec-Driven Development
@@ -93,12 +86,14 @@ SPDD's key rule: **"When reality diverges, fix the prompt first — then update 
 
 ---
 
-## Spec vs. Memory Bank
+## Tool Landscape (as of mid-2026)
 
-A spec is distinct from the codebase-wide context files:
-
-- **Memory bank / AGENTS.md**: Persistent, always-relevant rules and conventions. Applies to every session.
-- **Spec**: Task-specific. Describes what to build *for this change*. May or may not persist after the task.
+| Tool | Level | Approach | Notes |
+|---|---|---|---|
+| **Kiro** (AWS) | Spec-first | Lightweight; Requirements → Design → Tasks; VS Code-based | Verbose for small problems; no clear spec-anchored path |
+| **GitHub Spec Kit** | Spec-first (aspires to anchored) | CLI; constitution (memory bank) + slash commands; many files per spec | Most customizable; per-spec git branch suggests spec lifetime = change request |
+| **Tessl** | Spec-anchored → spec-as-source | CLI + MCP server; 1:1 spec-to-code-file mapping; `tessl build` generates code | Still in beta; deepest SDD ambition; non-determinism a real concern |
+| **SPDD / openspdd** (Thoughtworks) | Spec-anchored | REASONS Canvas + CLI; prompt↔code sync loop; governed team assets | Most detailed spec-anchored implementation; solves spec-once by design; see [[concepts/structured-prompt-driven-development]] |
 
 ---
 
@@ -125,7 +120,8 @@ A spec is distinct from the codebase-wide context files:
 
 ## Sources
 
-- [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Böckeler/Thoughtworks; three levels; Kiro, Spec Kit, Tessl
-- [[summaries/spec-driven-development-spec-kit--summary]] — GitHub/Delimarsky; four-phase workflow
-- [[summaries/spdd-structured-prompt-summary]] — Zhang & Xia/Thoughtworks; REASONS Canvas
-- [[summaries/using-sdd-with-claude-code--summary]] — Heeki Park; practitioner experience
+- [[summaries/spec-driven-development-spec-kit--summary]] — GitHub Spec Kit; four-phase workflow; "intent is the source of truth"; three use cases (Den Delimarsky, GitHub, 2025)
+- [[summaries/understanding-sdd-kiro-spec-kit-tessl--summary]] — Three levels of SDD; Kiro/Spec Kit/Tessl comparison; MDD parallel; critical observations (Birgitta Böckeler, Thoughtworks, 2025)
+- [[summaries/using-sdd-with-claude-code--summary]] — Practitioner account; spec-once failure mode; upfront planning pays dividends; stepwise builds (Heeki Park, 2026)
+- [[summaries/building-elite-ai-engineering-culture--summary]] — SDD as one of key practices in elite AI engineering orgs; Thoughtworks calling it "one of the most important practices of 2025" (cjroth.com, 2026)
+- [[summaries/structured-prompt-driven-development--summary]] — SPDD: REASONS Canvas; prompts as versioned team assets; closed-loop prompt↔code sync; openspdd CLI (Wei Zhang & Jessie Jie Xia, Thoughtworks, 2026)

@@ -9,6 +9,37 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 
 ---
 
+## [2026-06-22] ingest | 5 sources — SDV, SPDD, MCP architecture debates
+
+**Sources**:
+- `raw/inbox/Entering the Software-Defined Vehicle Era.md` — Egil Juliussen, EE Times (2022)
+- `raw/inbox/Software-Defined Car Foundations for Future Vehicle Generations.md` — KIT/Bosch (2021)
+- `raw/inbox/Structured-Prompt-Driven Development (SPDD).md` — Wei Zhang & Jessie Jie Xia, Thoughtworks (2026)
+- `raw/inbox/I Still Prefer MCP Over Skills.md` — David, david.coffee (2026)
+- `raw/inbox/MCP An (Accidentally) Universal Plugin System.md` — Scott Werner, worksonmymachine.ai (2025)
+
+**Created**:
+- `[[concepts/software-defined-vehicle]]` — New concept; automotive architecture shift to centralized compute + OTA; domain ECU transition; lifecycle challenges; SofDCar digital twin
+- `[[concepts/structured-prompt-driven-development]]` — New concept; REASONS Canvas; prompts as versioned team assets; closed-loop prompt↔code sync; openspdd CLI; three core skills
+- `[[summaries/entering-sdv-era--summary]]`
+- `[[summaries/sofdcar-project--summary]]`
+- `[[summaries/structured-prompt-driven-development--summary]]`
+- `[[summaries/mcp-over-skills--summary]]`
+- `[[summaries/mcp-universal-plugin-system--summary]]`
+
+**Updated**:
+- `[[concepts/model-context-protocol]]` — Added "MCP as Universal Plugin System" section (USB-C analogy, accidental network effect) + "MCP vs Skills" section (connector/manual taxonomy, knowledge layer pattern); source_count 3→5
+- `[[concepts/spec-driven-development]]` — Added SPDD/openspdd to tool landscape table; added to sources; source_count 4→5
+- `[[topics/electric-vehicles]]` — Added "Software-Defined Vehicle Transition" section linking to new concept; source_count 3→5
+- `[[topics/ai-software-development]]` — Added SPDD + MCP vs Skills to core concepts, recent developments, and sources; source_count 12→15
+
+**Key insights**:
+- SPDD is the most detailed spec-anchored implementation documented so far — solves spec-once failure mode by enforcing prompt↔code sync as workflow requirement
+- MCP's value extends beyond AI: "a well-designed hole for functionality" — the universal plugin system argument strengthens the adoption flywheel
+- The automotive SDV transition mirrors platform engineering themes: moving from bespoke ECUs to shared platforms
+
+---
+
 ## [2026-04-29] ingest | Batch ingest — 7 articles on AI-assisted development (Thoughtworks + GitHub + cjroth + Heeki Park)
 
 **Sources**:

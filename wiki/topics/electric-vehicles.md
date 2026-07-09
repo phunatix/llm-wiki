@@ -1,9 +1,9 @@
 ---
 title: Electric Vehicles & Tesla
 type: topic
-source_count: 3
+source_count: 5
 created: 2026-04-13
-last_updated: 2026-04-13
+last_updated: 2026-06-22
 tags:
   - topic
   - electric-vehicle
@@ -14,6 +14,7 @@ related_pages:
   - entities/Tesla
   - entities/Tesla-Model-Y
   - entities/Gigafactory-Berlin-Brandenburg
+  - concepts/software-defined-vehicle
 status: current
 ---
 
@@ -78,6 +79,19 @@ By 2025, Elon Musk's political activities had become a material business risk fo
 
 ---
 
+## The Software-Defined Vehicle Transition
+
+Beyond electrification, the entire automotive industry is undergoing a parallel transformation: the shift to **software-defined vehicles** (SDV). See [[concepts/software-defined-vehicle]] for the full concept page.
+
+Key points connecting to this topic:
+- Modern vehicles exceed 100M lines of code across 50+ ECUs; transitioning to domain controllers and eventually central compute
+- Tesla is arguably the furthest along this path — camera-only sensing, OTA updates, and FSD are all SDV hallmarks
+- BEV platforms provide a "clean sheet" opportunity to build SDV architecture from scratch (vs. retrofitting legacy ICE platforms)
+- European research (SofDCar project: Bosch, Mercedes-Benz, KIT, ZF) is developing lifecycle digital twins and security frameworks
+- Software maintenance for 10–15 year vehicle lifetimes is an unsolved challenge at industry scale
+
+---
+
 ## Open Questions / Areas to Explore
 
 - How does the Chinese EV market (BYD, NIO, Xpeng) compare to Tesla's positioning?
@@ -85,11 +99,14 @@ By 2025, Elon Musk's political activities had become a material business risk fo
 - How does Optimus robot development intersect with AI agent trends?
 - What's the geopolitical impact of NACS becoming the North American standard?
 - How do European EV manufacturers (VW, BMW, Stellantis) respond to Tesla's advantage?
+- Which OEMs will win the SDV transition — pure-play EVs (Tesla, Rivian) or incumbents with deeper legacy constraints?
 
 ---
 
-## Sources (3)
+## Sources (5)
 
 1. [[summaries/tesla-model-y-summary]] — Wikipedia; Model Y vehicle deep-dive
 2. [[summaries/gigafactory-berlin-summary]] — Wikipedia; Giga Berlin facility history and controversies
 3. [[summaries/tesla-inc-summary]] — Wikipedia; Tesla Inc. company overview (2003–2026)
+4. [[summaries/entering-sdv-era--summary]] — Industry overview of SDV complexities; domain ECU transition; OEM strategies (Egil Juliussen, EE Times, 2022)
+5. [[summaries/sofdcar-project--summary]] — German research consortium; extended digital twin; lifecycle security (KIT/Bosch, 2021)
