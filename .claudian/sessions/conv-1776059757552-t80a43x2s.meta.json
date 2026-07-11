@@ -4,8 +4,8 @@
   "title": "Implement Karpathy's LLM Wiki in Obsidian",
   "titleGenerationStatus": "success",
   "createdAt": 1776059757561,
-  "updatedAt": 1781550641467,
-  "lastResponseAt": 1781550641467,
+  "updatedAt": 1783599173790,
+  "lastResponseAt": 1783599173790,
   "sessionId": "a6e87c0c-1327-4402-8fb6-9339d5dfcc73",
   "providerState": {
     "providerSessionId": "a6e87c0c-1327-4402-8fb6-9339d5dfcc73"
@@ -13,11 +13,10 @@
   "usage": {
     "model": "sonnet",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 728,
-    "cacheReadInputTokens": 227881,
+    "cacheCreationInputTokens": 141,
+    "cacheReadInputTokens": 247355,
     "contextWindow": 200000,
-    "contextTokens": 228610,
-    "percentage": 100,
-    "contextWindowIsAuthoritative": true
+    "contextTokens": 247497,
+    "percentage": 100
   }
 }

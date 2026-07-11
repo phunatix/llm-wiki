@@ -33,7 +33,7 @@ The term was coined by [[entities/Kaspar-von-Grunberg]] of [[entities/Humanitec]
 ## Common IDP Components
 
 - **Platform Orchestrator**: Defines golden paths and abstracts infrastructure (e.g., Humanitec Platform Orchestrator)
-- **Internal Catalog**: Service registry, documentation, templates (e.g., Backstage)
+- **Internal Catalog**: Service registry, documentation, templates (e.g., [[entities/Backstage]])
 - **CI/CD**: Automated build and deployment pipelines
 - **Monitoring**: Observability for developer-deployed services
 - **Self-service portal**: UI or CLI for provisioning resources
@@ -60,10 +60,16 @@ See [[concepts/cognitive-load]] for the two main failure modes:
 - [[concepts/cognitive-load]]
 - [[concepts/developer-self-service]]
 - [[entities/Humanitec]]
+- [[entities/Backstage]]
 - [[topics/platform-engineering]]
+
+## Real-World Example: Zalando's Sunrise
+
+Zalando built "Sunrise" on Backstage starting 2021: replaced 100+ disconnected interfaces, scaled to 40,000+ entities managed by a 4-engineer team, with 30 plugins covering 27 tools. The single most impactful adoption lever: **completely shut down old tooling** rather than hoping users would migrate voluntarily. See [[summaries/zalando-sunrise-backstage-summary]].
 
 ## Sources
 
 - [[summaries/dark-side-of-self-service--summary]]
 - [[summaries/whats-the-future-of-platform-engineering--summary]]
+- [[summaries/zalando-sunrise-backstage-summary]] — Real-world Backstage IDP at 40k+ entity scale; adoption tactics
 - [[sources/building-multi-tenant-kubernetes-on-azure-aks]] — Practical IDP concerns in shared Kubernetes clusters; tenancy boundaries and governance

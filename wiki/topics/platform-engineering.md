@@ -1,13 +1,13 @@
 ---
 title: Platform Engineering
 type: topic
-source_count: 8
+source_count: 9
 created: 2026-04-13
-last_updated: 2026-04-23
+last_updated: 2026-07-09
 tags: [devops, platform, developer-experience, idp, golden-paths]
 inbound_links: 0
 status: complete
-related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-developer-platform]]", "[[concepts/golden-paths]]", "[[concepts/cognitive-load]]", "[[concepts/forward-deployed-engineer]]", "[[entities/Humanitec]]"]
+related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-developer-platform]]", "[[concepts/golden-paths]]", "[[concepts/cognitive-load]]", "[[concepts/forward-deployed-engineer]]", "[[entities/Humanitec]]", "[[entities/Backstage]]"]
 ---
 
 # Platform Engineering
@@ -38,6 +38,7 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 
 - [[entities/Humanitec]]: Pioneer in IDP space; coined the term IDP; Platform Orchestrator product
 - [[entities/Kaspar-von-Grunberg]]: CEO of Humanitec; coined "Internal Developer Platform"
+- [[entities/Backstage]]: Open-source developer portal framework by Spotify (CNCF); software catalog + plugin system; Zalando "Sunrise" is a prominent real-world adoption at 40k+ entities
 - Google DORA: Research organization measuring DevOps performance; tracks platform engineering trends
 
 ## Key Debates
@@ -66,6 +67,9 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - Standardization through attraction beats standardization through control — the measure is whether developers would choose your platform even if not required
 - Prioritize Day 2–50 golden paths: ongoing operations (rollbacks, config changes, debugging) consume 99% of application lifetime; service scaffolding is <1%
 - Dynamic Configuration Management (DCM) resolves the root cause of most Day 2–50 friction: static configs that break when infrastructure changes
+- **Shut down old tooling**: Zalando's most impactful adoption lever — better alternatives don't win if old alternatives still exist; bookmark habits are resilient
+- Personalization and interoperability drive re-engagement better than feature richness; users without service ownership still need a home
+- A 4-engineer team can serve thousands of engineers when the platform enables inner-sourcing via standard components and documentation
 
 ## See Also
 
@@ -83,3 +87,4 @@ related_pages: ["[[concepts/developer-self-service]]", "[[concepts/internal-deve
 - [[summaries/golden-paths-one-size-summary]]: Guardrails over gates; 17%→86% adoption case study; composable platform design
 - [[summaries/golden-path-to-ai-summary]]: AI velocity gap; composable AI guardrails; OpenAI-compatible API as interface standard
 - [[summaries/golden-paths-what-are-they-summary]]: Foundational definition; five reasons; design methodology
+- [[summaries/zalando-sunrise-backstage-summary]]: Real-world Backstage adoption at scale (40k entities); inner-sourcing model; adoption tactics; shutdown-old-tooling lesson

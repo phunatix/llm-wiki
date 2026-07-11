@@ -1,6 +1,6 @@
 	# Wiki Index
 
-**Updated**: 2026-06-22 | **Total Pages**: 100 | **Total Sources**: 46
+**Updated**: 2026-07-09 | **Total Pages**: 102 | **Total Sources**: 47
 
 This is a content-oriented catalog of everything in the wiki. Updated on every ingest.
 
