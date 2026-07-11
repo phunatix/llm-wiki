@@ -406,3 +406,26 @@ For example: `grep "^## \[" log.md | tail -10` shows the last 10 entries.
 - Session detected that Apr 29 session had already ingested 8 related articles (Böckeler, GitHub Spec Kit, Heeki Park, Kief Morris, Fowler harness, Doernenburg, Roth elite culture, Stainless MCP); removed 8 duplicate summaries created before discovering this
 
 **Total wiki size after ingest**: 102 pages / 48 sources
+
+---
+
+## [2026-07-11] ingest | Zalando Sunrise — Backstage-based IDP case study
+
+**Source**: "Sunrise: Zalando's developer platform based on Backstage" — Lacey Nagel & Arthur, Zalando Engineering Blog, 2023-08-03 (clipped 2026-07-07)
+
+**Pages created** (2):
+- `wiki/entities/Backstage` — Open-source developer portal framework (Spotify/CNCF); software catalog + plugin system; Zalando Sunrise adoption at 40k+ entity scale; inner-sourcing model; relationship to golden paths
+- `wiki/summaries/zalando-sunrise-backstage-summary` — Before-state (100+ disconnected interfaces); kill-old-tooling as #1 adoption lever; personalization; inner-sourcing model; entity graph vision
+
+**Pages updated** (3):
+- `wiki/topics/platform-engineering` — Added Backstage entity; shutdown-old-tooling insight; Zalando source; source count 8→9
+- `wiki/concepts/internal-developer-platform` — Added Backstage entity reference; Zalando real-world example section; new source
+- `wiki/index.md` — 102 pages / 48 sources; Backstage in entities; Zalando summary added
+
+**Key insights**:
+- The single most impactful adoption lever Zalando identified was *shutting down old tooling*. Better alternatives don't win against habit and bookmark lists. Most platform teams avoid this because it requires cross-team negotiation — it's a political problem disguised as a technical one.
+- A team of 4 engineers can operate a developer platform serving thousands by designing for inner-sourcing: standard component library + documentation that reduces contributor friction so other teams maintain their own plugins
+- Backstage's Zalando experience is the most concrete evidence in the wiki for what a mature IDP looks like at scale (40k+ entities, 30 plugins, 2k+ merged PRs, 100+ replaced interfaces)
+- The future Zalando vision — entity graph + domain mapping + SBOM + operational health scoring — is the logical evolution of "catalog" → "intelligence layer" for a software organization
+
+**Total wiki size after ingest**: 102 pages / 48 sources

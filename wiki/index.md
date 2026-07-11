@@ -8,7 +8,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ## Topics (8)
 
-- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load, Day 2–50 prioritization, AI velocity gap | Sources: 8
+- [[topics/platform-engineering]] — Platform teams, IDPs, golden paths, developer self-service, cognitive load, Day 2–50 prioritization, AI velocity gap, Backstage/Zalando case study | Sources: 9
 - [[topics/ai-software-development]] — AI coding agents, developer transformation, local LLMs, Europe AI dependency, agentic workflow loops, SPDD, MCP vs Skills | Sources: 15
 - [[topics/personal-knowledge-management]] — Obsidian, LLM Wiki pattern, PARA, Johnny.Decimal, markdown vs. databases debate | Sources: 6
 - [[topics/leadership-management]] — Functional organization, experts leading experts, difficult employees, conversations | Sources: 4
@@ -18,9 +18,10 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Entities (13)
+## Entities (14)
 
 - [[entities/Apple]] — Company; functional org structure; experts leading experts; 40x revenue growth on same structure | Sources: 1
+- [[entities/Backstage]] — Open-source developer portal framework (Spotify/CNCF); software catalog + plugin system; Zalando Sunrise at 40k+ entities | Sources: 2
 - [[entities/cncf]] — Cloud Native Computing Foundation; stewards Kubernetes; publishes Platform Engineering Maturity Model and Platforms White Paper | Sources: 1
 - [[entities/Eric-J-Ma]] — Data scientist; Obsidian + AI PKM system; 12 people managed; 30-40% → <10% PKM overhead | Sources: 1
 - [[entities/Gigafactory-Berlin-Brandenburg]] — Tesla's European factory; 12K employees; production ramp struggles; labor/protest controversies | Sources: 1
@@ -72,7 +73,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 
 ---
 
-## Summaries (47)
+## Summaries (48)
 
 - [[summaries/entering-sdv-era--summary]] — EE Times; industry overview of SDV complexities; domain ECU transition; OEM strategies (Juliussen, 2022)
 - [[summaries/sofdcar-project--summary]] — KIT/Bosch; German research consortium; extended digital twin; lifecycle security; 5G test track (2021)
@@ -129,6 +130,7 @@ This is a content-oriented catalog of everything in the wiki. Updated on every i
 - [[summaries/us-cuts-off-tech-to-europe--summary]] — Europe's AI/cloud dependency; 70% US cloud; no competitive EU AI stack
 - [[summaries/using-sdd-with-claude-code--summary]] — Heeki Park; practitioner account; spec-once failure mode; upfront planning ROI; Sonnet vs Opus limits
 - [[summaries/whats-the-future-of-platform-engineering--summary]] — Humanitec/DORA; PE is 90% cultural; AI intersection; Gartner 80% by 2026
+- [[summaries/zalando-sunrise-backstage-summary]] — Zalando; Backstage-based IDP at 40k+ entities; kill-old-tooling adoption lesson; inner-sourcing model
 
 ---
 
@@ -189,6 +191,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 45. Structured-Prompt-Driven Development (SPDD) — Wei Zhang & Jessie Jie Xia, Thoughtworks/martinfowler.com (2026-04-28, clipped 2026-05-04)
 46. I Still Prefer MCP Over Skills — David, david.coffee (2026-04-02, clipped 2026-04-20)
 47. MCP: An (Accidentally) Universal Plugin System — Scott Werner, worksonmymachine.ai (2025-06-28, clipped 2026-04-20)
+48. Sunrise: Zalando's developer platform based on Backstage — Lacey Nagel, Zalando Engineering Blog (2023-08-03, clipped 2026-07-07)
 
 *(Sources 2 and 4 in inbox — German IT emigration and property vs. ETF articles — intentionally not ingested; outside current wiki scope)*
 
@@ -203,6 +206,7 @@ All from `raw/inbox/`. Original batch ingested 2026-04-13; updated per entry bel
 
 ## Recent Changes
 
+- **2026-07-11**: Ingest of Zalando Sunrise / Backstage — 1 new entity (Backstage), 1 new summary; updates to platform-engineering topic + internal-developer-platform concept; total now 102 pages / 48 sources
 - **2026-06-22**: Ingest of 5 sources — 2 new concepts (software-defined-vehicle, structured-prompt-driven-development), 5 new summaries; major updates to model-context-protocol (universal plugin system + MCP vs Skills), spec-driven-development (SPDD as tool), electric-vehicles (SDV section), ai-software-development; total now 100 pages / 46 sources
 - **2026-04-29**: Batch ingest of 7 articles — 2 new concepts (harness-engineering, spec-driven-development), 7 new summaries; major updates to topics/ai-software-development and concepts/agentic-coding-risks; 2 German personal articles intentionally skipped; total now 93 pages / 41 sources
 - **2026-04-23**: Ingest of MCP article (Stainless) — 1 new summary; major update to concepts/model-context-protocol (historical predecessors, four-good-enoughs, adoption flywheel); total now 84 pages / 35 sources

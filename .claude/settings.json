@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Bash(cat \"/Users/olaf/Documents/Obsidian/llm-wiki/raw/inbox/How I\"$'\\\\xe2\\\\x80\\\\x99'\"m Productive with Claude Code.md\")",
@@ -19,12 +20,12 @@
       "Bash(INBOX=\"/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/inbox\"\nARTICLES=\"/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/articles\"\n\n# These 14 are exact-name duplicates safe to remove from inbox\n# \\(same filename exists in articles/, no wiki summary references raw/inbox/ for them\\)\nfiles=\\(\n  \"Dark Side of Self-Service   Humanitec.md\"\n  \"Developers, Reinvented – Thomas Dohmke.md\"\n  \"Gehaltsreport Was IT-Profis und KI-Spezialisten wirklich verdienen.md\"\n  \"How Apple Is Organized for Innovation.md\"\n  \"How to Manage a Stubborn, Defensive, or Defiant Employee.md\"\n  \"How to SRE Anything..md\"\n  \"How to Stay Open and Curious in Hard Conversations.md\"\n  \"Mastering Personal Knowledge Management with Obsidian and AI.md\"\n  \"Meinung Training Fit durch Laufen - so bereiten Sie sich optimal auf einen Marathon vor.md\"\n  \"Obsidian, my new read-it-later app.md\"\n  \"Thoughts on slowing the fuck down.md\"\n  \"What If the US Cuts Off Tech to Europe.md\"\n  \"What's the Future of Platform Engineering?.md\"\n  \"Why the forward-deployed engineer is tech's hottest job.md\"\n\\)\n\nfor f in \"${files[@]}\"; do\n  if [ -f \"$ARTICLES/$f\" ] && [ -f \"$INBOX/$f\" ]; then\n    rm \"$INBOX/$f\"\n    echo \"Deleted inbox copy: $f\"\n  else\n    echo \"SKIP \\(one copy missing\\): $f\"\n  fi\ndone\n\necho \"\"\necho \"Remaining in inbox: $\\(ls \"$INBOX\" | wc -l\\) files\")",
       "Bash(md5 \"raw/inbox/What's the Future of Platform Engineering?.md\")",
       "Bash(md5 \"raw/articles/What's the Future of Platform Engineering?.md\")",
-      "Bash(python3 -c \"\nimport os, glob\n\ninbox = '/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/inbox'\narticles = '/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/articles'\n\nfor f in os.listdir\\(inbox\\):\n    if 'Future' in f or 'forward' in f:\n        # find matching file in articles \\(compare normalized\\)\n        inbox_path = os.path.join\\(inbox, f\\)\n        for a in os.listdir\\(articles\\):\n            if 'Future' in a or 'forward' in a:\n                articles_path = os.path.join\\(articles, a\\)\n                # compare file sizes as quick check\n                if os.path.getsize\\(inbox_path\\) == os.path.getsize\\(articles_path\\):\n                    os.remove\\(inbox_path\\)\n                    print\\(f'Deleted inbox: {f!r} \\(matched articles: {a!r}\\)'\\)\n                else:\n                    print\\(f'SIZE DIFFERS — keeping inbox: {f!r}'\\)\n\")"
+      "Bash(python3 -c \"\nimport os, glob\n\ninbox = '/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/inbox'\narticles = '/Users/olaf.ngo/Documents/Obsidian/llm-wiki/raw/articles'\n\nfor f in os.listdir\\(inbox\\):\n    if 'Future' in f or 'forward' in f:\n        # find matching file in articles \\(compare normalized\\)\n        inbox_path = os.path.join\\(inbox, f\\)\n        for a in os.listdir\\(articles\\):\n            if 'Future' in a or 'forward' in a:\n                articles_path = os.path.join\\(articles, a\\)\n                # compare file sizes as quick check\n                if os.path.getsize\\(inbox_path\\) == os.path.getsize\\(articles_path\\):\n                    os.remove\\(inbox_path\\)\n                    print\\(f'Deleted inbox: {f!r} \\(matched articles: {a!r}\\)'\\)\n                else:\n                    print\\(f'SIZE DIFFERS — keeping inbox: {f!r}'\\)\n\")",
+      "Bash(sed -n '190,215p' /Users/olaf/Documents/Obsidian/llm-wiki/wiki/index.md)"
     ],
     "deny": [],
     "ask": []
   },
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "enabledPlugins": {
     "ralph-loop@claude-plugins-official": false
   }
