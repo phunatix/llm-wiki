@@ -1,6 +1,8 @@
 # CLAUDE.md — LLM Wiki Schema & Operations
 
-This document defines the structure, conventions, and workflows for maintaining the LLM Wiki. It evolves as you discover what works best.
+This file provides guidance to Claude Code (claude.ai/code) when working in this repository. It defines the structure, conventions, and workflows for maintaining the LLM Wiki, and it is the authoritative, actively-maintained operating contract — see § 14 for how it relates to the other meta-documents in this repo (`AGENTS.md`, `ARCHITECTURE.md`, `GEMINI.md`, etc.). It evolves as you discover what works best.
+
+This is not a conventional application codebase — there is no code to build, lint, or test in the wiki itself. The "development workflow" is the ingest/query/lint loop described in § 6, and the only real tooling in the repo is the Quartz publishing pipeline (§ 13).
 
 ---
 
@@ -18,12 +20,13 @@ This document defines the structure, conventions, and workflows for maintaining 
 ### The Wiki (LLM-Generated)
 - **Location**: `wiki/` directory
 - **Categories**:
-  - `entities/` — people, organizations, systems (e.g., OpenAI, GPT-4, Transformer Architecture)
-  - `concepts/` — ideas, methods, theories (e.g., Scaling Laws, In-Context Learning, RLHF)
-  - `topics/` — higher-level areas (e.g., "LLM Inference", "Training Stability")
+  - `entities/` — people, organizations, systems (e.g., Humanitec, Backstage, Apple)
+  - `concepts/` — ideas, methods, theories (e.g., golden paths, spec-driven development, agentic infrastructure)
+  - `topics/` — higher-level areas (e.g., platform engineering, AI software development)
   - `summaries/` — one-source summaries (link to entity/concept pages)
-  - `analyses/` — multi-source syntheses (e.g., "Timeline of Model Releases")
+  - `analyses/` — multi-source syntheses (e.g., comparisons, timelines)
   - `sources/` — explicit source tracking and metadata
+- **Current scope**: despite the schema's generic examples above, the wiki's actual content has converged on platform engineering and its adjacent systems — internal developer platforms, Kubernetes/homelab ops, SRE, AI-assisted/agentic software development, and the organizational choices around them — plus smaller side-topics (leadership, EVs, marathon training). `wiki/meta/overview.md` is the authoritative statement of current scope; check it before assuming domain from this file's illustrative examples.
 
 ### Special Files
 - `wiki/index.md` — content-oriented catalog (updated on every ingest)
@@ -73,7 +76,7 @@ related_pages: ["[[entity/other-page]]", "[[concept/another-page]]"]
 - `source_count`: Number of raw sources cited on this page
 - `created` / `last_updated`: For chronological tracking
 - `tags`: Comma-separated for Dataview queries
-- `inbound_links`: Updated by linter to track importance
+- `inbound_links`: Intended to track importance, but there is no linter script in this repo that computes it automatically — despite `templates/README.md` describing it as linter-maintained, no such tool exists. In practice it's set once (usually to `0`) and rarely revisited; treat it as aspirational, not reliable, and don't cite it as a real popularity signal. Newer pages sometimes omit the field entirely (e.g. `wiki/entities/Backstage.md`), which is fine — it's not required by Quartz or by any check.
 - `status`: complete = ready to cite; draft = under development; needs-review = marked for human review
 - `related_pages`: Wikilinks to related pages (helps with cross-reference maintenance)
 
@@ -333,14 +336,44 @@ Signal when you want to evolve the schema by saying:
 
 ---
 
-## Checklist: First Steps
+## 13. Commands & Tooling
 
-- [ ] Create raw source directory structure
-- [ ] Add your first source to `raw/`
-- [ ] Read this CLAUDE.md fully (let me know if questions)
-- [ ] Ingest first source (I'll walk through the workflow)
-- [ ] Build out 5-10 core pages (entities, concepts)
-- [ ] Review the graph view in Obsidian
-- [ ] Refine the schema based on what you learn
+There is no build/lint/test step for the wiki content itself — it's plain markdown, and nothing checks it automatically except Quartz's build (which will fail loudly on malformed YAML frontmatter). The only real commands in this repo belong to the Quartz publishing layer, and you only need them when working on Quartz itself or verifying that a change will publish cleanly — not for routine ingest/query/lint work on `wiki/`.
 
-**You're now ready to build.**
+All commands run from `quartz/` (Node ≥22, npm ≥10.9.2 — see `quartz/package.json` `engines`):
+
+```bash
+cd quartz
+npm ci               # install dependencies (first time / after lockfile changes)
+npm run build        # one-shot build: reads ../wiki, writes static site to quartz/public/
+npm run serve        # build + serve locally with live reload (http://localhost:8080)
+npm run check        # tsc --noEmit + prettier --check over Quartz's own source
+npm run format       # prettier --write over Quartz's own source
+npm test             # tsx --test — unit tests for Quartz internals, not wiki content
+```
+
+Notes:
+- `npm run build` and `npm run serve` are the ones you'll actually use, e.g. to sanity-check that new frontmatter or a new page renders correctly before pushing.
+- `npm run check` / `npm test` exercise the vendored Quartz framework code under `quartz/quartz/`, which this repo doesn't modify — only relevant if you're patching Quartz itself (rare; see § 10 rules).
+- CI (`.github/workflows/deploy.yml`) runs `npm ci` + `npx quartz build -d ../wiki` on every push to `main` and deploys the result to GitHub Pages. There is no separate CI lint/test job — a broken build is the only thing that blocks a deploy.
+- Wiki hygiene checks (broken wikilinks, orphan pages, stale `status`/frontmatter drift, index/page-count mismatches) are not backed by a checked-in script. They've historically been done with ad hoc `grep`/`find` one-liners during lint passes (§ 6.3) — see the pre-approved command patterns in `.claude/settings.json` for examples of the kind of query that's been used before.
+
+---
+
+## 14. Related Documents in This Repository
+
+This repo has accumulated several overlapping meta-documents from different scaffolding sessions and tools. When they conflict, this file (`CLAUDE.md`) is authoritative for how to actually operate — the others range from complementary to stale:
+
+- **`AGENTS.md`** — An earlier/parallel operating schema aimed at non-Claude coding agents (Codex, etc.). Its frontmatter schema (`status: active`, `source_files`, `updated`) and workflow details **differ** from what's actually in use (compare to real pages under `wiki/`, which follow this file's conventions: `status: complete|draft|needs-review`, `last_updated`, `related_pages`). Treat `AGENTS.md` as a looser, slightly out-of-sync sibling, not a second source of truth.
+- **`GEMINI.md`** — A divergent schema apparently written for a different LLM/tool, describing conventions (e.g. a mandatory `### AI Insight` blockquote section on every ingest) that are **not** reflected anywhere in the actual wiki or in `wiki/log.md`'s history. It is not the contract this repo follows; don't adopt its conventions unless the user explicitly asks to.
+- **`ARCHITECTURE.md`** — A descriptive system diagram/reference (layers, CI/CD pipeline, plugin pipeline, directory tree). Useful for orientation; update it if the directory structure or pipeline changes materially, but it's not itself a workflow contract.
+- **`README.md`** — Short public-facing project overview.
+- **`GETTING_STARTED.md`** / **`SETUP_COMPLETE.md`** — One-time onboarding docs written when the repo was first scaffolded (empty wiki, "ingest your first source"). They're historical artifacts of that first session, not current state — the wiki is well past that stage (see § 15). Don't use their checklists as a guide to what to do next.
+- **`llmwiki.md`** — The original idea document (Andrej Karpathy's LLM-wiki pattern) that this repo was scaffolded from. Copied in verbatim as background reading; never edit it.
+- **`templates/`** — Page-skeleton templates referenced throughout this file (§ 3, § 4). `templates/README.md` documents how to use them.
+
+---
+
+## 15. Current Snapshot
+
+As of the last `wiki/log.md` entry (2026-07-11): **102 pages / 48 sources**, spanning 14 entities, ~31 concepts, 8 topics, 56 summaries, 23 source pages, and 1 analysis page. This will drift immediately as ingests continue — treat it as a rough sense of scale, not a live count. For the current numbers, read the header of `wiki/index.md` (`**Updated**: ... | **Total Pages**: ... | **Total Sources**: ...`) or run `find wiki -name '*.md' | grep -vE 'index.md|log.md' | wc -l`.
