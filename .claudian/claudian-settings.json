@@ -1,16 +1,15 @@
 {
   "userName": "",
-  "permissionMode": "normal",
+  "permissionMode": "acceptEdits",
   "model": "sonnet",
-  "thinkingBudget": "low",
   "effortLevel": "high",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
+  "titleGenerationLocale": "",
   "titleGenerationModel": "",
   "excludedTags": [],
   "mediaFolder": "",
   "systemPrompt": "",
-  "persistentExternalContextPaths": [],
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
@@ -19,6 +18,7 @@
     "scrollDownKey": "s",
     "focusInputKey": "i"
   },
+  "requireCommandOrControlEnterToSend": false,
   "locale": "en",
   "providerConfigs": {
     "claude": {
@@ -32,7 +32,68 @@
       "enableSonnet1M": false,
       "lastModel": "sonnet",
       "environmentVariables": "",
-      "environmentHash": ""
+      "environmentHash": "",
+      "enabled": true,
+      "responseStyle": "Default",
+      "modelAliases": {},
+      "visibleModels": [
+        "haiku",
+        "sonnet",
+        "opus[1m]",
+        "claude-fable-5-1[1m]"
+      ],
+      "selectedModels": [
+        {
+          "value": "opus[1m]",
+          "label": "Opus (1M context)",
+          "description": "Opus 5 with 1M context · Best for everyday, complex tasks · $5/$25 per Mtok",
+          "resolvedModel": "claude-opus-5[1m]",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "claude-fable-5-1[1m]",
+          "label": "Fable",
+          "description": "Fable 5.1 · Most capable for your hardest and longest-running tasks",
+          "resolvedModel": "claude-fable-5-1",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "sonnet",
+          "label": "Sonnet",
+          "description": "Sonnet 5 · Efficient for routine tasks · $2/$10 per Mtok",
+          "resolvedModel": "claude-sonnet-5",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        {
+          "value": "haiku",
+          "label": "Haiku",
+          "description": "Haiku 4.5 · Fastest for quick answers · $1/$5 per Mtok",
+          "resolvedModel": "claude-haiku-4-5-20251001",
+          "reasoningMetadataResolved": true,
+          "supportedEffortLevels": []
+        }
+      ]
     },
     "codex": {
       "enabled": false,
@@ -46,10 +107,53 @@
         "Olafs-MacBook-Pro.local": "native-windows",
         "CDDEA060273": "native-windows"
       },
-      "wslDistroOverridesByHost": {}
+      "wslDistroOverridesByHost": {},
+      "modelAliases": {},
+      "visibleModels": [],
+      "enableUltraEffort": false,
+      "responseStyle": "pragmatic",
+      "selectedModels": []
+    },
+    "grok": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredReasoningByModel": {},
+      "visibleModels": [],
+      "selectedModelsByHost": {}
+    },
+    "opencode": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "thinkingOptionsByModel": {},
+      "visibleModels": [],
+      "selectedModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "visibleModels": [],
+      "selectedModels": []
     }
   },
   "settingsProvider": "claude",
+  "lastSelectedChatModel": {
+    "providerId": "claude",
+    "model": "sonnet"
+  },
   "savedProviderModel": {
     "claude": "sonnet"
   },
@@ -57,13 +161,32 @@
     "claude": "high"
   },
   "savedProviderServiceTier": {},
+  "savedProviderPermissionMode": {
+    "claude": "acceptEdits"
+  },
+  "pendingProviderSessionInvalidations": {},
+  "maxWarmAgentProcesses": 5,
+  "enableAutoScroll": true,
+  "showMessageTimestamps": false,
+  "deferMathRenderingDuringStreaming": true,
+  "expandFileEditsByDefault": false,
+  "chatViewPlacement": "right-sidebar",
+  "enableZenMode": true,
+  "enableDualPane": true,
+  "dualPaneSide": "right",
+  "restoreTabsOnStartup": true,
+  "skillsSynced": false,
+  "sessionManagerOrganization": "list",
+  "sessionManagerSort": "last-updated",
+  "sessionAutoArchiveAfter": "off",
+  "pinnedLinkedContentPaths": [],
+  "hiddenCommands": [],
+  "thinkingBudget": "low",
   "savedProviderThinkingBudget": {
     "claude": "low"
   },
   "lastCustomModel": "",
   "maxTabs": 3,
   "tabBarPosition": "input",
-  "enableAutoScroll": true,
-  "openInMainTab": false,
-  "hiddenProviderCommands": {}
+  "openInMainTab": false
 }
