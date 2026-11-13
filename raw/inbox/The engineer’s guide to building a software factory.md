@@ -9,7 +9,6 @@ description: "Coding agents alone plateau at 20 to 30% gains. Real progress come
 tags:
   - "clippings"
 ---
-You have **1** article left to read this month before you need to [register](https://leaddev.com/register) a free LeadDev.com account.
 
 **Key takeaways:**
 
